@@ -1,8 +1,8 @@
 {
-  "family": "example",
-  "about": "Example family: books.toscrape.com (a public site made for scraping practice). Copy this repo and change it.",
+  "family": "land-acquisition",
+  "about": "Land acquisition notices (and appointments, struck-off notices) from the Gazette of India (egazette.gov.in); state gazettes next.",
   "setup": ["pip install -r requirements.txt"],
   "tasks": {
-    "crawl": ["python", "crawl.py"]
+    "egazette": ["python", "crawl.py"]
   }
 }
