@@ -69,7 +69,7 @@ def egazette_items(today=None):
     return out
 
 
-SEED_LIMIT = 5           # first pool run: only the newest items. Set to None to seed everything (see README).
+SEED_LIMIT = None        # first pool run used 5 (2026-11-07: 5 of 5 done, 4,548 records, 0 errors). None = seed everything.
 EGAZETTE = egazette_items()
 if SEED_LIMIT:
     EGAZETTE = EGAZETTE[-SEED_LIMIT:]
