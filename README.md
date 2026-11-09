@@ -6,8 +6,27 @@ This family collects official notices of land acquisition from the gazettes of I
 
 | Project | Site | Status |
 |---|---|---|
-| `land-acquisition-egazette` | egazette.gov.in (Gazette of India: central ministries and Delhi) | Ready |
+| `land-acquisition-egazette` | egazette.gov.in (Gazette of India: central ministries and Delhi) | Complete (216,930 gazettes, 9 November 2026) |
+| `land-acquisition-bhoomirashi` | bhoomirashi.gov.in (land acquisition portal of MoRTH: national highways) | New (G14, phase 1) |
 | State gazettes | One site for each state | Survey in progress |
+
+## What the bhoomirashi project collects
+
+- bhoomirashi.gov.in is the land acquisition portal of the Ministry of Road Transport and Highways (MoRTH, NHAI and NHIDCL).
+- The portal has a public "Highway Register (State-wise)". It does not need a login or a captcha.
+- The register gives one row for each parcel of land: state, highway, chainage, district, sub-district, village, survey number, area and publish date.
+- The project stores one record for each row. The queue has one item for each state (38 items).
+- The register leaves a cell empty when the value is the same as in the row above. The scraper copies the value down.
+- The village cell often has a code in brackets, for example `Bastora (626678)`. The scraper puts the code in `village_code`.
+- The project keeps each answer at `land-acquisition-bhoomirashi/register/<state>.html.gz`.
+- The register does not give compensation amounts. The awards (section 3G) are behind the login of the portal.
+- The site answers only from India. The pool sends the work through the Indian proxies of the hub.
+
+Run one state from a team box, without the hub:
+
+```
+myproxy run python bhoomirashi.py --local GOA
+```
 
 ## What the egazette project collects
 

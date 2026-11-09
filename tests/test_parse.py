@@ -91,3 +91,45 @@ def test_queue_plan():
     assert sum(i["payload"]["expected"] for i in bulk) == 61442 and bulk[-1]["payload"]["pages"] == [4001, 4097]
     later = [i["key"] for i in family.egazette_items(today=date(2026, 11, 9))]
     assert later[-1] == "pub-2026-11-01_2026-11-07" and set(keys) <= set(later)
+
+
+# bhoomirashi.gov.in (G14): the state-wise Highway Register. The sample is the header, the first 12 rows, a district change and a
+# highway change of the Kerala answer (cut from 41,906 rows).
+import bhoomirashi
+
+
+def register():
+    return bhoomirashi.parse((PAGES / "bhoomirashi-kerala-sample.html").read_text(encoding="utf-8"), "KERALA")
+
+
+def test_register_rows_fill_down():
+    rows = register()
+    assert len(rows) == 24                                              # 25 table rows minus the header
+    rid, g = rows[0]
+    assert (g["state"], g["highway"], g["chainage"], g["district"], g["sub_district"]) == \
+           ("KERALA", "66", "379.100 - 460.700", "ALAPPUZHA", "Ambalappuzha")
+    assert (g["village"], g["village_code"], g["survey_no"], g["area"], g["publish_date"]) == \
+           ("Ambalappuzha Block 14", None, "1089737", 0.0015, "2020-12-03")
+    assert rows[1][1]["village"] == "Ambalappuzha Block 14" and rows[1][1]["district"] == "ALAPPUZHA"   # empty cells = same as above
+
+
+def test_register_village_code_and_changes():
+    by_survey = {g["survey_no"]: g for _, g in register()}
+    g = by_survey["1156909"]                                            # the row after a district change
+    assert (g["district"], g["sub_district"], g["village"], g["village_code"]) == \
+           ("ERNAKULAM", "Kanayannur", "Cheranallur (CT)", "628009")
+    g = by_survey["2504231"]                                            # a new highway: district continues, the rest is printed
+    assert (g["highway"], g["chainage"], g["district"], g["sub_district"], g["village_code"]) == \
+           ("85", "98.527 - 151.613", "ERNAKULAM", "Kothamangalam", "628043")
+
+
+def test_register_ids_are_stable_and_unique():
+    a, b = register(), register()
+    assert [r for r, _ in a] == [r for r, _ in b]
+    assert len({r for r, _ in a}) == len(a) and all(r.startswith("kerala-") for r, _ in a)
+
+
+def test_register_without_table_is_an_error():
+    import pytest
+    with pytest.raises(bhoomirashi.SiteError):
+        bhoomirashi.parse("<html><body>Session expired</body></html>", "KERALA")

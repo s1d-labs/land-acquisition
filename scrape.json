@@ -1,8 +1,17 @@
 {
   "family": "land-acquisition",
-  "about": "Land acquisition notices (and appointments, struck-off notices) from the Gazette of India (egazette.gov.in); state gazettes next.",
-  "setup": ["pip install -r requirements.txt"],
+  "about": "Land acquisition: notices in the Gazette of India (egazette.gov.in) and the national highway parcel register (bhoomirashi.gov.in); state gazettes next.",
+  "setup": [
+    "pip install -r requirements.txt"
+  ],
   "tasks": {
-    "egazette": ["python", "crawl.py"]
+    "egazette": [
+      "python",
+      "crawl.py"
+    ],
+    "bhoomirashi": [
+      "python",
+      "bhoomirashi.py"
+    ]
   }
 }

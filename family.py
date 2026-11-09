@@ -91,6 +91,43 @@ PROJECTS = [
     },
 ]
 
+# G14, phase 1: bhoomirashi.gov.in (MoRTH land acquisition portal), public "Highway Register (State-wise)": every parcel of land on
+# record for national highways (village, survey number, area, publish date). One queue item per state, as the form names them.
+# The compensation amounts (3G awards) are behind the portal's login: not in this project.
+BHOOMIRASHI_STATES = [
+    "ANDAMAN & NICOBAR ISLANDS", "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR", "CHANDIGARH", "CHHATTISGARH",
+    "DADRA & NAGAR HAVELI", "DAMAN & DIU", "DELHI", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH", "JAMMU & KASHMIR", "JHARKHAND",
+    "KARNATAKA", "KERALA", "Ladakh", "LAKSHADWEEP", "MADHYA PRADESH", "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND",
+    "Not Applicable", "ODISHA", "PONDICHERRY", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMIL NADU", "TELANGANA", "TRIPURA", "UTTAR PRADESH",
+    "UTTARAKHAND", "WEST BENGAL",
+]                                       # the form's option values on 2026-11-09 (RepState.cshtml)
+REGISTER_ROWS = {"KERALA": 41906, "MAHARASHTRA": 89950, "RAJASTHAN": 76027}   # counted on 2026-11-09; the rest unknown
+
+
+def bhoomirashi_items():
+    import re
+    return [{"key": re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-"),
+             "payload": {"state": s, **({"expected": REGISTER_ROWS[s]} if s in REGISTER_ROWS else {})}}
+            for s in BHOOMIRASHI_STATES]
+
+
+PROJECTS.append({
+    "name": f"{FAMILY}-bhoomirashi",
+    "title": "NH land acquisition register (bhoomirashi.gov.in): every parcel by state, village, survey number, area, date",
+    "task": "bhoomirashi",
+    "target": "bhoomirashi.gov.in",
+    "env": {"SITE": "https://bhoomirashi.gov.in"},
+    "probe": f"{FAMILY}:bhoomirashi.gov.in",
+    "proxy": "IN",
+    "max_workers": 2,                # one big POST per state (Maharashtra: 42 MB, ~40 s): two at a time is enough
+    "threads": 1, "delay_ms": 1000,
+    "unit_label": "state", "record_label": "parcel",
+    "items": bhoomirashi_items(),
+})
+
 # Health checks the hub runs every minute (through an Indian proxy: the host is .gov.in). Not attached to the project yet: the site's
 # TLS chain is incomplete, and a check that fails for that reason alone would hold all the work.
-PROBES = [{"name": f"{FAMILY}:egazette.gov.in", "url": "https://egazette.gov.in/", "expect": "Gazette of India", "proxy": "IN"}]
+PROBES = [{"name": f"{FAMILY}:egazette.gov.in", "url": "https://egazette.gov.in/", "expect": "Gazette of India", "proxy": "IN"},
+          # the portal's home page redirects to this page; it answers 200 with a valid certificate (checked 2026-11-09)
+          {"name": f"{FAMILY}:bhoomirashi.gov.in", "url": "https://bhoomirashi.gov.in/auth/revamp/login1.cshtml",
+           "expect": "Land Acquisition Portal", "proxy": "IN"}]
