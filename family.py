@@ -125,6 +125,33 @@ PROJECTS.append({
     "items": bhoomirashi_items(),
 })
 
+# G14, phase 2: land acquisition awards and notices on district collectorate websites (S3WaaS). One queue item per site, from
+# data/s3waas_districts.json (600 sites). First pool run: the pilot sites only; set DISTRICTS_ALL = True after checking them.
+DISTRICTS = json.loads((HERE / "data" / "s3waas_districts.json").read_text())["hosts"]
+DISTRICTS_ALL = False
+DISTRICTS_PILOT = ["imphalwest.nic.in", "raigarh.gov.in", "rudraprayag.gov.in", "solapur.gov.in", "chatra.nic.in",
+                   "karimnagar.telangana.gov.in", "buxar.nic.in", "bhagalpur.nic.in", "malappuram.nic.in", "jalaun.nic.in"]
+
+
+def district_items():
+    hosts = DISTRICTS if DISTRICTS_ALL else [h for h in DISTRICTS if h["host"] in DISTRICTS_PILOT]
+    return [{"key": h["host"], "payload": h} for h in hosts]
+
+
+PROJECTS.append({
+    "name": f"{FAMILY}-districts",
+    "title": "Land acquisition awards and notices on district websites (S3WaaS): awards, payments, 3A/3D, sections 11/19",
+    "task": "districts",
+    "target": "s3waas.gov.in",
+    "env": {"PDF_TAGS": "award,payment"},
+    "probe": None,                   # one item per site: a failed site fails its own item, and the hub retries it later
+    "proxy": "IN",
+    "max_workers": 4,
+    "threads": 1, "delay_ms": 500,
+    "unit_label": "district site", "record_label": "document",
+    "items": district_items(),
+})
+
 # Health checks the hub runs every minute (through an Indian proxy: the host is .gov.in). Not attached to the project yet: the site's
 # TLS chain is incomplete, and a check that fails for that reason alone would hold all the work.
 PROBES = [{"name": f"{FAMILY}:egazette.gov.in", "url": "https://egazette.gov.in/", "expect": "Gazette of India", "proxy": "IN"},

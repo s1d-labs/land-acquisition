@@ -7,7 +7,8 @@ This family collects official notices of land acquisition from the gazettes of I
 | Project | Site | Status |
 |---|---|---|
 | `land-acquisition-egazette` | egazette.gov.in (Gazette of India: central ministries and Delhi) | Complete (216,930 gazettes, 9 November 2026) |
-| `land-acquisition-bhoomirashi` | bhoomirashi.gov.in (land acquisition portal of MoRTH: national highways) | New (G14, phase 1) |
+| `land-acquisition-bhoomirashi` | bhoomirashi.gov.in (land acquisition portal of MoRTH: national highways) | Complete (1,582,923 parcels, 9 November 2026) |
+| `land-acquisition-districts` | District websites on S3WaaS (600 sites) | Pilot (G14, phase 2: 10 sites) |
 | State gazettes | One site for each state | Survey in progress |
 
 ## What the bhoomirashi project collects
@@ -26,6 +27,24 @@ Run one state from a team box, without the hub:
 
 ```
 myproxy run python bhoomirashi.py --local GOA
+```
+
+## What the districts project collects
+
+- Most district websites use one template (S3WaaS). Each site has a public search (`/?s=<word>`).
+- The project searches each site for 8 words: `award`, `land acquisition`, `compensation`, `3G`, `अवार्ड`, `अधिनिर्णय`, `भू-अर्जन`, `मुआवजा`.
+- It keeps only the results about land acquisition. It drops prizes ("Good Governance Awards") and other compensation (victims, crops, disasters).
+- It opens each result and stores one record: site, state, title, description, dates, PDF links and tags.
+- The tags are `award`, `payment`, `arbitration`, `nh`, `railway`, `notice_3a`, `notice_3d`, `sec_11`, `sec_19`, `sia` and `rnr`.
+- It downloads the PDFs of awards and payment lists to `land-acquisition-districts/pdf/<site>/`. For the other records it keeps the PDF links.
+- The award PDFs are often scans. The project does not read the amounts. That needs OCR later.
+- The site list is `data/s3waas_districts.json` (600 sites). It does not include the 18 sites behind Cloudflare Bot Management.
+- The first pool run uses 10 sites (`DISTRICTS_PILOT` in `family.py`). After a check of the results, set `DISTRICTS_ALL = True` and run the setup again.
+
+Run one site from a team box, without the hub:
+
+```
+myproxy run python districts.py --local imphalwest.nic.in
 ```
 
 ## What the egazette project collects

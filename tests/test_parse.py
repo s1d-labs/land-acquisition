@@ -133,3 +133,36 @@ def test_register_without_table_is_an_error():
     import pytest
     with pytest.raises(bhoomirashi.SiteError):
         bhoomirashi.parse("<html><body>Session expired</body></html>", "KERALA")
+
+
+# District websites on S3WaaS (G14, phase 2): a search result page and an award page of imphalwest.nic.in (scripts cut).
+import districts
+
+
+def test_search_results_keep_land_titles():
+    res, last = districts.results((PAGES / "s3waas-imphalwest-search-award.html").read_text(encoding="utf-8"), "imphalwest.nic.in")
+    assert last == 2 and len(res) == 10
+    land = [t for _, t in res if districts.is_land(t)]
+    assert len(land) == 8                                                    # 2 of the 10 are prizes for electoral work
+    assert not districts.is_land("Receiving of Best Electoral Practices Award for Innovative Measures, 2022")
+
+
+def test_award_page_fields():
+    url = "https://imphalwest.nic.in/document/award-of-compensation-u-s-3g-3h-of-the-national-highways-act-1956/"
+    d = districts.item((PAGES / "s3waas-imphalwest-award-3g.html").read_text(encoding="utf-8"), url)
+    assert d["title"].startswith("Award of Compensation u/s 3G & 3H of the National Highways Act, 1956")
+    assert d["pdf_urls"] == ["https://cdn.s3waas.gov.in/s3faa9afea49ef2ff029a833cccc778fd0/uploads/2023/04/2023042822.pdf"]
+    assert "2023-04-19" in d["dates"]
+    assert districts.tags_of(d["title"]) == ["award", "nh"]
+    assert districts.pdf_path("imphalwest.nic.in", d["pdf_urls"][0]) == "pdf/imphalwest.nic.in/2023-04-2023042822.pdf"
+
+
+def test_land_titles_and_tags():
+    assert districts.is_land("भू-अर्जन प्रकरणो मे पारित अवार्ड (ग्राम- जरेकेला और नवापारा)")
+    assert districts.tags_of("भू-अर्जन प्रकरणो मे पारित अवार्ड") == ["award"]
+    assert districts.is_land("Section 11 Notification for the villages of Kuranwadi/Chikhali and Konheri")
+    assert not districts.is_land("Circular regarding Manipur Victim Compensation Scheme, 2019")
+    assert not districts.is_land("Good Governance Awards")
+    assert not districts.is_land("Bihar Education Project, Bhagalpur: Application Form for Teacher Award-2024")
+    assert districts.tags_of("Notice regarding Camp for compensation of Land.") == ["payment"]
+    assert districts.tags_of("Payable amount of compensation for the acquisition of land for New B.G. Railway line") == ["payment", "railway"]

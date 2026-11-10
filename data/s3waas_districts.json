@@ -1,0 +1,3005 @@
+{
+"source": "https://india.s1d.me/data-rich (data.json, read 2026-11-07); S3WaaS district sites, without the hosts behind Cloudflare Bot Management",
+"hosts": [
+{
+"host": "nicobars.andaman.nic.in",
+"name": "Nicobars",
+"state": "Andaman and Nicobar Islands"
+},
+{
+"host": "northmiddle.andaman.nic.in",
+"name": "North And Middle Andaman",
+"state": "Andaman and Nicobar Islands"
+},
+{
+"host": "southandaman.nic.in",
+"name": "South Andamans",
+"state": "Andaman and Nicobar Islands"
+},
+{
+"host": "allurisitharamaraju.ap.gov.in",
+"name": "Alluri Sitharama Raju",
+"state": "Andhra Pradesh"
+},
+{
+"host": "anakapalli.ap.gov.in",
+"name": "Anakapalli",
+"state": "Andhra Pradesh"
+},
+{
+"host": "ananthapuramu.ap.gov.in",
+"name": "Ananthapuramu",
+"state": "Andhra Pradesh"
+},
+{
+"host": "annamayya.ap.gov.in",
+"name": "Annamayya",
+"state": "Andhra Pradesh"
+},
+{
+"host": "bapatla.ap.gov.in",
+"name": "Bapatla",
+"state": "Andhra Pradesh"
+},
+{
+"host": "chittoor.ap.gov.in",
+"name": "Chittoor",
+"state": "Andhra Pradesh"
+},
+{
+"host": "eastgodavari.ap.gov.in",
+"name": "East Godavari",
+"state": "Andhra Pradesh"
+},
+{
+"host": "eluru.ap.gov.in",
+"name": "Eluru",
+"state": "Andhra Pradesh"
+},
+{
+"host": "guntur.ap.gov.in",
+"name": "Guntur",
+"state": "Andhra Pradesh"
+},
+{
+"host": "kadapa.ap.gov.in",
+"name": "Y.S.R. Kadapa",
+"state": "Andhra Pradesh"
+},
+{
+"host": "kakinada.ap.gov.in",
+"name": "Kakinada",
+"state": "Andhra Pradesh"
+},
+{
+"host": "konaseema.ap.gov.in",
+"name": "Dr. B.R. Ambedkar Konaseema",
+"state": "Andhra Pradesh"
+},
+{
+"host": "krishna.ap.gov.in",
+"name": "Krishna",
+"state": "Andhra Pradesh"
+},
+{
+"host": "kurnool.ap.gov.in",
+"name": "Kurnool",
+"state": "Andhra Pradesh"
+},
+{
+"host": "nandyal.ap.gov.in",
+"name": "Nandyal",
+"state": "Andhra Pradesh"
+},
+{
+"host": "ntr.ap.gov.in",
+"name": "Ntr",
+"state": "Andhra Pradesh"
+},
+{
+"host": "palnadu.ap.gov.in",
+"name": "Palnadu",
+"state": "Andhra Pradesh"
+},
+{
+"host": "parvathipurammanyam.ap.gov.in",
+"name": "Parvathipuram Manyam",
+"state": "Andhra Pradesh"
+},
+{
+"host": "prakasam.ap.gov.in",
+"name": "Prakasam",
+"state": "Andhra Pradesh"
+},
+{
+"host": "spsnellore.ap.gov.in",
+"name": "Sri Potti Sriramulu Nellore",
+"state": "Andhra Pradesh"
+},
+{
+"host": "srikakulam.ap.gov.in",
+"name": "Srikakulam",
+"state": "Andhra Pradesh"
+},
+{
+"host": "srisathyasai.ap.gov.in",
+"name": "Sri Sathya Sai",
+"state": "Andhra Pradesh"
+},
+{
+"host": "tirupati.ap.gov.in",
+"name": "Tirupati",
+"state": "Andhra Pradesh"
+},
+{
+"host": "vizianagaram.ap.gov.in",
+"name": "Vizianagaram",
+"state": "Andhra Pradesh"
+},
+{
+"host": "westgodavari.ap.gov.in",
+"name": "West Godavari",
+"state": "Andhra Pradesh"
+},
+{
+"host": "anjaw.nic.in",
+"name": "Anjaw",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "changlang.nic.in",
+"name": "Changlang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "dibangvalley.nic.in",
+"name": "Dibang Valley",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "eastkameng.nic.in",
+"name": "East Kameng",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "eastsiang.nic.in",
+"name": "East Siang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "kradaadi.nic.in",
+"name": "Kra Daadi",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "kurungkumey.nic.in",
+"name": "Kurung Kumey",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "lohit.nic.in",
+"name": "Lohit",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "longding.nic.in",
+"name": "Longding",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "lowersubansiri.nic.in",
+"name": "Lower Subansiri",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "namsai.nic.in",
+"name": "Namsai",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "papumpare.nic.in",
+"name": "Papum Pare",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "roing.nic.in",
+"name": "Lower Dibang Valley",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "shiyomi.nic.in",
+"name": "Shi Yomi",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "siang.nic.in",
+"name": "Siang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "tawang.nic.in",
+"name": "Tawang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "tirap.nic.in",
+"name": "Tirap",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "uppersiang.nic.in",
+"name": "Upper Siang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "uppersubansiri.nic.in",
+"name": "Upper Subansiri",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "westkameng.nic.in",
+"name": "West Kameng",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "westsiang.nic.in",
+"name": "West Siang",
+"state": "Arunachal Pradesh"
+},
+{
+"host": "araria.nic.in",
+"name": "Araria",
+"state": "Bihar"
+},
+{
+"host": "arwal.nic.in",
+"name": "Arwal",
+"state": "Bihar"
+},
+{
+"host": "aurangabad.bih.nic.in",
+"name": "Aurangabad",
+"state": "Bihar"
+},
+{
+"host": "banka.nic.in",
+"name": "Banka",
+"state": "Bihar"
+},
+{
+"host": "begusarai.nic.in",
+"name": "Begusarai",
+"state": "Bihar"
+},
+{
+"host": "bhagalpur.nic.in",
+"name": "Bhagalpur",
+"state": "Bihar"
+},
+{
+"host": "bhojpur.nic.in",
+"name": "Bhojpur",
+"state": "Bihar"
+},
+{
+"host": "buxar.nic.in",
+"name": "Buxar",
+"state": "Bihar"
+},
+{
+"host": "darbhanga.nic.in",
+"name": "Darbhanga",
+"state": "Bihar"
+},
+{
+"host": "eastchamparan.nic.in",
+"name": "Purbi Champaran",
+"state": "Bihar"
+},
+{
+"host": "gaya.nic.in",
+"name": "Gaya",
+"state": "Bihar"
+},
+{
+"host": "gopalganj.nic.in",
+"name": "Gopalganj",
+"state": "Bihar"
+},
+{
+"host": "jamui.nic.in",
+"name": "Jamui",
+"state": "Bihar"
+},
+{
+"host": "jehanabad.nic.in",
+"name": "Jehanabad",
+"state": "Bihar"
+},
+{
+"host": "kaimur.nic.in",
+"name": "Kaimur (Bhabua)",
+"state": "Bihar"
+},
+{
+"host": "katihar.nic.in",
+"name": "Katihar",
+"state": "Bihar"
+},
+{
+"host": "khagaria.nic.in",
+"name": "Khagaria",
+"state": "Bihar"
+},
+{
+"host": "kishanganj.nic.in",
+"name": "Kishanganj",
+"state": "Bihar"
+},
+{
+"host": "lakhisarai.nic.in",
+"name": "Lakhisarai",
+"state": "Bihar"
+},
+{
+"host": "madhepura.nic.in",
+"name": "Madhepura",
+"state": "Bihar"
+},
+{
+"host": "madhubani.nic.in",
+"name": "Madhubani",
+"state": "Bihar"
+},
+{
+"host": "munger.nic.in",
+"name": "Munger",
+"state": "Bihar"
+},
+{
+"host": "muzaffarpur.nic.in",
+"name": "Muzaffarpur",
+"state": "Bihar"
+},
+{
+"host": "nalanda.nic.in",
+"name": "Nalanda",
+"state": "Bihar"
+},
+{
+"host": "nawada.nic.in",
+"name": "Nawada",
+"state": "Bihar"
+},
+{
+"host": "patna.nic.in",
+"name": "Patna",
+"state": "Bihar"
+},
+{
+"host": "patnadivision.bih.nic.in",
+"name": "Patna Division, Bihar",
+"state": "Bihar"
+},
+{
+"host": "purnea.nic.in",
+"name": "Purnia",
+"state": "Bihar"
+},
+{
+"host": "purneadivision.bih.nic.in",
+"name": "Purnea Division, Bihar",
+"state": "Bihar"
+},
+{
+"host": "rohtas.nic.in",
+"name": "Rohtas",
+"state": "Bihar"
+},
+{
+"host": "saharsa.nic.in",
+"name": "Saharsa",
+"state": "Bihar"
+},
+{
+"host": "samastipur.nic.in",
+"name": "Samastipur",
+"state": "Bihar"
+},
+{
+"host": "saran.nic.in",
+"name": "Saran",
+"state": "Bihar"
+},
+{
+"host": "sheikhpura.nic.in",
+"name": "Sheikhpura",
+"state": "Bihar"
+},
+{
+"host": "sheohar.nic.in",
+"name": "Sheohar",
+"state": "Bihar"
+},
+{
+"host": "sitamarhi.nic.in",
+"name": "Sitamarhi",
+"state": "Bihar"
+},
+{
+"host": "siwan.nic.in",
+"name": "Siwan",
+"state": "Bihar"
+},
+{
+"host": "supaul.nic.in",
+"name": "Supaul",
+"state": "Bihar"
+},
+{
+"host": "vaishali.nic.in",
+"name": "Vaishali",
+"state": "Bihar"
+},
+{
+"host": "westchamparan.nic.in",
+"name": "Pashchim Champaran",
+"state": "Bihar"
+},
+{
+"host": "chandigarhdistrict.nic.in",
+"name": "Chandigarh",
+"state": "Chandigarh"
+},
+{
+"host": "balod.gov.in",
+"name": "Balod",
+"state": "Chhattisgarh"
+},
+{
+"host": "balodabazar.gov.in",
+"name": "Balodabazar-Bhatapara",
+"state": "Chhattisgarh"
+},
+{
+"host": "balrampur.gov.in",
+"name": "Balrampur-Ramanujganj",
+"state": "Chhattisgarh"
+},
+{
+"host": "bastar.gov.in",
+"name": "Bastar",
+"state": "Chhattisgarh"
+},
+{
+"host": "belagavi.nic.in",
+"name": "Belagavi",
+"state": "Chhattisgarh"
+},
+{
+"host": "bemetara.gov.in",
+"name": "Bemetara",
+"state": "Chhattisgarh"
+},
+{
+"host": "bijapur.gov.in",
+"name": "Bijapur",
+"state": "Chhattisgarh"
+},
+{
+"host": "bilaspur.gov.in",
+"name": "Bilaspur",
+"state": "Chhattisgarh"
+},
+{
+"host": "dantewada.nic.in",
+"name": "Dakshin Bastar Dantewada",
+"state": "Chhattisgarh"
+},
+{
+"host": "dhamtari.gov.in",
+"name": "Dhamtari",
+"state": "Chhattisgarh"
+},
+{
+"host": "durg.gov.in",
+"name": "Durg",
+"state": "Chhattisgarh"
+},
+{
+"host": "gariaband.gov.in",
+"name": "Gariyaband",
+"state": "Chhattisgarh"
+},
+{
+"host": "gaurela-pendra-marwahi.cg.gov.in",
+"name": "Gaurela-Pendra-Marwahi",
+"state": "Chhattisgarh"
+},
+{
+"host": "janjgir-champa.gov.in",
+"name": "Janjgir-Champa",
+"state": "Chhattisgarh"
+},
+{
+"host": "jashpur.nic.in",
+"name": "Jashpur",
+"state": "Chhattisgarh"
+},
+{
+"host": "kanker.gov.in",
+"name": "Uttar Bastar Kanker",
+"state": "Chhattisgarh"
+},
+{
+"host": "kawardha.gov.in",
+"name": "Kabeerdham",
+"state": "Chhattisgarh"
+},
+{
+"host": "kondagaon.gov.in",
+"name": "Kondagaon",
+"state": "Chhattisgarh"
+},
+{
+"host": "korba.gov.in",
+"name": "Korba",
+"state": "Chhattisgarh"
+},
+{
+"host": "korea.gov.in",
+"name": "Korea",
+"state": "Chhattisgarh"
+},
+{
+"host": "mahasamund.gov.in",
+"name": "Mahasamund",
+"state": "Chhattisgarh"
+},
+{
+"host": "mohla-manpur-ambagarhchowki.cg.gov.in",
+"name": "Mohla-Manpur-Ambagarh Chouki",
+"state": "Chhattisgarh"
+},
+{
+"host": "mungeli.gov.in",
+"name": "Mungeli",
+"state": "Chhattisgarh"
+},
+{
+"host": "narayanpur.gov.in",
+"name": "Narayanpur",
+"state": "Chhattisgarh"
+},
+{
+"host": "raigarh.gov.in",
+"name": "Raigarh",
+"state": "Chhattisgarh"
+},
+{
+"host": "raipur.gov.in",
+"name": "Raipur",
+"state": "Chhattisgarh"
+},
+{
+"host": "rajnandgaon.nic.in",
+"name": "Rajnandgaon",
+"state": "Chhattisgarh"
+},
+{
+"host": "sukma.gov.in",
+"name": "Sukma",
+"state": "Chhattisgarh"
+},
+{
+"host": "surajpur.nic.in",
+"name": "Surajpur",
+"state": "Chhattisgarh"
+},
+{
+"host": "surguja.gov.in",
+"name": "Surguja",
+"state": "Chhattisgarh"
+},
+{
+"host": "diu.gov.in",
+"name": "Diu",
+"state": "Dadra and Nagar Haveli and Daman and Diu"
+},
+{
+"host": "dnh.gov.in",
+"name": "Dadra And Nagar Haveli",
+"state": "Dadra and Nagar Haveli and Daman and Diu"
+},
+{
+"host": "dmeast.delhi.gov.in",
+"name": "East",
+"state": "Delhi"
+},
+{
+"host": "dmnorth.delhi.gov.in",
+"name": "North",
+"state": "Delhi"
+},
+{
+"host": "dmnortheast.delhi.gov.in",
+"name": "North East",
+"state": "Delhi"
+},
+{
+"host": "dmnorthwest.delhi.gov.in",
+"name": "North West",
+"state": "Delhi"
+},
+{
+"host": "dmsouth.delhi.gov.in",
+"name": "South",
+"state": "Delhi"
+},
+{
+"host": "dmsoutheast.delhi.gov.in",
+"name": "South East",
+"state": "Delhi"
+},
+{
+"host": "dmsouthwest.delhi.gov.in",
+"name": "South West",
+"state": "Delhi"
+},
+{
+"host": "northgoa.gov.in",
+"name": "North Goa",
+"state": "Goa"
+},
+{
+"host": "southgoa.nic.in",
+"name": "South Goa",
+"state": "Goa"
+},
+{
+"host": "ahmedabad.nic.in",
+"name": "Ahmedabad",
+"state": "Gujarat"
+},
+{
+"host": "amreli.nic.in",
+"name": "Amreli",
+"state": "Gujarat"
+},
+{
+"host": "anand.nic.in",
+"name": "Anand",
+"state": "Gujarat"
+},
+{
+"host": "arvalli.nic.in",
+"name": "Arvalli",
+"state": "Gujarat"
+},
+{
+"host": "banaskantha.nic.in",
+"name": "Banas Kantha",
+"state": "Gujarat"
+},
+{
+"host": "bharuch.nic.in",
+"name": "Bharuch",
+"state": "Gujarat"
+},
+{
+"host": "bhavnagar.nic.in",
+"name": "Bhavnagar",
+"state": "Gujarat"
+},
+{
+"host": "botad.nic.in",
+"name": "Botad",
+"state": "Gujarat"
+},
+{
+"host": "dangs.nic.in",
+"name": "Dangs",
+"state": "Gujarat"
+},
+{
+"host": "devbhumidwarka.nic.in",
+"name": "Devbhumi Dwarka",
+"state": "Gujarat"
+},
+{
+"host": "gandhinagar.nic.in",
+"name": "Gandhinagar",
+"state": "Gujarat"
+},
+{
+"host": "jamnagar.nic.in",
+"name": "Jamnagar",
+"state": "Gujarat"
+},
+{
+"host": "junagadh.nic.in",
+"name": "Junagadh",
+"state": "Gujarat"
+},
+{
+"host": "kachchh.nic.in",
+"name": "Kachchh",
+"state": "Gujarat"
+},
+{
+"host": "kheda.nic.in",
+"name": "Kheda",
+"state": "Gujarat"
+},
+{
+"host": "mahesana.nic.in",
+"name": "Mahesana",
+"state": "Gujarat"
+},
+{
+"host": "navsari.nic.in",
+"name": "Navsari",
+"state": "Gujarat"
+},
+{
+"host": "panchmahals.nic.in",
+"name": "Panch Mahals",
+"state": "Gujarat"
+},
+{
+"host": "patan.nic.in",
+"name": "Patan",
+"state": "Gujarat"
+},
+{
+"host": "porbandar.nic.in",
+"name": "Porbandar",
+"state": "Gujarat"
+},
+{
+"host": "rajkot.nic.in",
+"name": "Rajkot",
+"state": "Gujarat"
+},
+{
+"host": "sabarkantha.nic.in",
+"name": "Sabar Kantha",
+"state": "Gujarat"
+},
+{
+"host": "surat.nic.in",
+"name": "Surat",
+"state": "Gujarat"
+},
+{
+"host": "surendranagar.nic.in",
+"name": "Surendranagar",
+"state": "Gujarat"
+},
+{
+"host": "tapi.nic.in",
+"name": "Tapi",
+"state": "Gujarat"
+},
+{
+"host": "vadodara.nic.in",
+"name": "Vadodara",
+"state": "Gujarat"
+},
+{
+"host": "valsad.nic.in",
+"name": "Valsad",
+"state": "Gujarat"
+},
+{
+"host": "ambala.gov.in",
+"name": "Ambala",
+"state": "Haryana"
+},
+{
+"host": "bhiwani.gov.in",
+"name": "Bhiwani",
+"state": "Haryana"
+},
+{
+"host": "charkhidadri.gov.in",
+"name": "Charkhi Dadri",
+"state": "Haryana"
+},
+{
+"host": "envis.haryana.gov.in",
+"name": "EIACP Hub Haryana",
+"state": "Haryana"
+},
+{
+"host": "faridabad.nic.in",
+"name": "Faridabad",
+"state": "Haryana"
+},
+{
+"host": "fatehabad.nic.in",
+"name": "Fatehabad",
+"state": "Haryana"
+},
+{
+"host": "gurugram.gov.in",
+"name": "Gurugram",
+"state": "Haryana"
+},
+{
+"host": "hisar.gov.in",
+"name": "Hisar",
+"state": "Haryana"
+},
+{
+"host": "hrccc.harenvironment.gov.in",
+"name": "Climate Change Cell, Haryana",
+"state": "Haryana"
+},
+{
+"host": "jhajjar.nic.in",
+"name": "Jhajjar",
+"state": "Haryana"
+},
+{
+"host": "jind.gov.in",
+"name": "Jind",
+"state": "Haryana"
+},
+{
+"host": "kaithal.gov.in",
+"name": "Kaithal",
+"state": "Haryana"
+},
+{
+"host": "karnal.gov.in",
+"name": "Karnal",
+"state": "Haryana"
+},
+{
+"host": "kurukshetra.gov.in",
+"name": "Kurukshetra",
+"state": "Haryana"
+},
+{
+"host": "mahendragarh.gov.in",
+"name": "Mahendragarh",
+"state": "Haryana"
+},
+{
+"host": "nuh.gov.in",
+"name": "Nuh",
+"state": "Haryana"
+},
+{
+"host": "palwal.gov.in",
+"name": "Palwal",
+"state": "Haryana"
+},
+{
+"host": "panipat.gov.in",
+"name": "Panipat",
+"state": "Haryana"
+},
+{
+"host": "rewari.gov.in",
+"name": "Rewari",
+"state": "Haryana"
+},
+{
+"host": "rohtak.gov.in",
+"name": "Rohtak",
+"state": "Haryana"
+},
+{
+"host": "sirsa.gov.in",
+"name": "Sirsa",
+"state": "Haryana"
+},
+{
+"host": "sonipat.gov.in",
+"name": "Sonipat",
+"state": "Haryana"
+},
+{
+"host": "yamunanagar.nic.in",
+"name": "Yamunanagar",
+"state": "Haryana"
+},
+{
+"host": "hpbilaspur.nic.in",
+"name": "Bilaspur",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpchamba.nic.in",
+"name": "Chamba",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hphamirpur.nic.in",
+"name": "Hamirpur",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpkangra.nic.in",
+"name": "Kangra",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpkinnaur.nic.in",
+"name": "Kinnaur",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpkullu.nic.in",
+"name": "Kullu",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hplahaulspiti.nic.in",
+"name": "Lahaul And Spiti",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpmandi.nic.in",
+"name": "Mandi",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpshimla.nic.in",
+"name": "Shimla",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpsirmaur.nic.in",
+"name": "Sirmaur",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpsolan.nic.in",
+"name": "Solan",
+"state": "Himachal Pradesh"
+},
+{
+"host": "hpuna.nic.in",
+"name": "Una",
+"state": "Himachal Pradesh"
+},
+{
+"host": "anantnag.nic.in",
+"name": "Anantnag",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "bandipore.nic.in",
+"name": "Bandipora",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "baramulla.nic.in",
+"name": "Baramulla",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "budgam.nic.in",
+"name": "Budgam",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "ganderbal.nic.in",
+"name": "Ganderbal",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "jammu.nic.in",
+"name": "Jammu",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "kulgam.nic.in",
+"name": "Kulgam",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "kupwara.nic.in",
+"name": "Kupwara",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "srinagar.nic.in",
+"name": "Srinagar",
+"state": "Jammu and Kashmir"
+},
+{
+"host": "bokaro.nic.in",
+"name": "Bokaro",
+"state": "Jharkhand"
+},
+{
+"host": "chaibasa.nic.in",
+"name": "West Singhbhum",
+"state": "Jharkhand"
+},
+{
+"host": "chatra.nic.in",
+"name": "Chatra",
+"state": "Jharkhand"
+},
+{
+"host": "deoghar.nic.in",
+"name": "Deoghar",
+"state": "Jharkhand"
+},
+{
+"host": "dhanbad.nic.in",
+"name": "Dhanbad",
+"state": "Jharkhand"
+},
+{
+"host": "dumka.nic.in",
+"name": "Dumka",
+"state": "Jharkhand"
+},
+{
+"host": "garhwa.nic.in",
+"name": "Garhwa",
+"state": "Jharkhand"
+},
+{
+"host": "giridih.nic.in",
+"name": "Giridih",
+"state": "Jharkhand"
+},
+{
+"host": "godda.nic.in",
+"name": "Godda",
+"state": "Jharkhand"
+},
+{
+"host": "gumla.nic.in",
+"name": "Gumla",
+"state": "Jharkhand"
+},
+{
+"host": "hazaribag.nic.in",
+"name": "Hazaribagh",
+"state": "Jharkhand"
+},
+{
+"host": "jamshedpur.nic.in",
+"name": "East Singhbum",
+"state": "Jharkhand"
+},
+{
+"host": "jamtara.nic.in",
+"name": "Jamtara",
+"state": "Jharkhand"
+},
+{
+"host": "khunti.nic.in",
+"name": "Khunti",
+"state": "Jharkhand"
+},
+{
+"host": "koderma.nic.in",
+"name": "Koderma",
+"state": "Jharkhand"
+},
+{
+"host": "latehar.nic.in",
+"name": "Latehar",
+"state": "Jharkhand"
+},
+{
+"host": "lohardaga.nic.in",
+"name": "Lohardaga",
+"state": "Jharkhand"
+},
+{
+"host": "pakur.nic.in",
+"name": "Pakur",
+"state": "Jharkhand"
+},
+{
+"host": "palamu.nic.in",
+"name": "Palamu",
+"state": "Jharkhand"
+},
+{
+"host": "ramgarh.nic.in",
+"name": "Ramgarh",
+"state": "Jharkhand"
+},
+{
+"host": "ranchi.nic.in",
+"name": "Ranchi",
+"state": "Jharkhand"
+},
+{
+"host": "sahibganj.nic.in",
+"name": "Sahebganj",
+"state": "Jharkhand"
+},
+{
+"host": "seraikela.nic.in",
+"name": "Saraikela Kharsawan",
+"state": "Jharkhand"
+},
+{
+"host": "simdega.nic.in",
+"name": "Simdega",
+"state": "Jharkhand"
+},
+{
+"host": "bagalkot.nic.in",
+"name": "Bagalkote",
+"state": "Karnataka"
+},
+{
+"host": "ballari.nic.in",
+"name": "Ballari",
+"state": "Karnataka"
+},
+{
+"host": "bangalorerural.nic.in",
+"name": "Bengaluru Rural",
+"state": "Karnataka"
+},
+{
+"host": "bengaluruurban.nic.in",
+"name": "Bengaluru Urban",
+"state": "Karnataka"
+},
+{
+"host": "bidar.nic.in",
+"name": "Bidar",
+"state": "Karnataka"
+},
+{
+"host": "chamrajnagar.nic.in",
+"name": "Chamarajanagar",
+"state": "Karnataka"
+},
+{
+"host": "chikkaballapur.nic.in",
+"name": "Chikkaballapura",
+"state": "Karnataka"
+},
+{
+"host": "chikkamagaluru.nic.in",
+"name": "Chikkamagaluru",
+"state": "Karnataka"
+},
+{
+"host": "chitradurga.nic.in",
+"name": "Chitradurga",
+"state": "Karnataka"
+},
+{
+"host": "davanagere.nic.in",
+"name": "Davanagere",
+"state": "Karnataka"
+},
+{
+"host": "dharwad.nic.in",
+"name": "Dharwad",
+"state": "Karnataka"
+},
+{
+"host": "dk.nic.in",
+"name": "Dakshina Kannada",
+"state": "Karnataka"
+},
+{
+"host": "gadag.nic.in",
+"name": "Gadag",
+"state": "Karnataka"
+},
+{
+"host": "hassan.nic.in",
+"name": "Hassan",
+"state": "Karnataka"
+},
+{
+"host": "haveri.nic.in",
+"name": "Haveri",
+"state": "Karnataka"
+},
+{
+"host": "kalaburagi.nic.in",
+"name": "Kalaburagi",
+"state": "Karnataka"
+},
+{
+"host": "kodagu.nic.in",
+"name": "Kodagu",
+"state": "Karnataka"
+},
+{
+"host": "kolar.nic.in",
+"name": "Kolar",
+"state": "Karnataka"
+},
+{
+"host": "koppal.nic.in",
+"name": "Koppal",
+"state": "Karnataka"
+},
+{
+"host": "mandya.nic.in",
+"name": "Mandya",
+"state": "Karnataka"
+},
+{
+"host": "mysore.nic.in",
+"name": "Mysuru",
+"state": "Karnataka"
+},
+{
+"host": "raichur.nic.in",
+"name": "Raichur",
+"state": "Karnataka"
+},
+{
+"host": "ramanagara.nic.in",
+"name": "Bengaluru South",
+"state": "Karnataka"
+},
+{
+"host": "shimoga.nic.in",
+"name": "Shivamogga",
+"state": "Karnataka"
+},
+{
+"host": "shivamogga.nic.in",
+"name": "ಶಿವಮೊಗ್ಗ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ ಸರ್ಕಾರ | ಕರ್ನಾಟಕದ ಆಹಾರ ಕಣಜ | India",
+"state": "Karnataka"
+},
+{
+"host": "tumkur.nic.in",
+"name": "Tumakuru",
+"state": "Karnataka"
+},
+{
+"host": "udupi.nic.in",
+"name": "Udupi",
+"state": "Karnataka"
+},
+{
+"host": "uttarakannada.nic.in",
+"name": "Uttara Kannada",
+"state": "Karnataka"
+},
+{
+"host": "vijayanagara.nic.in",
+"name": "Vijayanagara",
+"state": "Karnataka"
+},
+{
+"host": "vijayapura.nic.in",
+"name": "Vijayapura",
+"state": "Karnataka"
+},
+{
+"host": "yadgir.nic.in",
+"name": "Yadgir",
+"state": "Karnataka"
+},
+{
+"host": "alappuzha.nic.in",
+"name": "Alappuzha",
+"state": "Kerala"
+},
+{
+"host": "ernakulam.nic.in",
+"name": "Ernakulam",
+"state": "Kerala"
+},
+{
+"host": "idukki.nic.in",
+"name": "Idukki",
+"state": "Kerala"
+},
+{
+"host": "kannur.nic.in",
+"name": "Kannur",
+"state": "Kerala"
+},
+{
+"host": "kasargod.nic.in",
+"name": "Kasaragod",
+"state": "Kerala"
+},
+{
+"host": "kollam.nic.in",
+"name": "Kollam",
+"state": "Kerala"
+},
+{
+"host": "kottayam.nic.in",
+"name": "Kottayam",
+"state": "Kerala"
+},
+{
+"host": "kozhikode.nic.in",
+"name": "Kozhikode",
+"state": "Kerala"
+},
+{
+"host": "malappuram.nic.in",
+"name": "Malappuram",
+"state": "Kerala"
+},
+{
+"host": "palakkad.nic.in",
+"name": "Palakkad",
+"state": "Kerala"
+},
+{
+"host": "pathanamthitta.nic.in",
+"name": "Pathanamthitta",
+"state": "Kerala"
+},
+{
+"host": "thrissur.nic.in",
+"name": "Thrissur",
+"state": "Kerala"
+},
+{
+"host": "trivandrum.nic.in",
+"name": "Thiruvananthapuram",
+"state": "Kerala"
+},
+{
+"host": "wayanad.gov.in",
+"name": "Wayanad",
+"state": "Kerala"
+},
+{
+"host": "kargil.nic.in",
+"name": "Kargil",
+"state": "Ladakh"
+},
+{
+"host": "leh.nic.in",
+"name": "Leh Ladakh",
+"state": "Ladakh"
+},
+{
+"host": "agarmalwa.nic.in",
+"name": "Agar-Malwa",
+"state": "Madhya Pradesh"
+},
+{
+"host": "alirajpur.nic.in",
+"name": "Alirajpur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "anuppur.nic.in",
+"name": "Anuppur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "ashoknagar.nic.in",
+"name": "Ashoknagar",
+"state": "Madhya Pradesh"
+},
+{
+"host": "balaghat.nic.in",
+"name": "Balaghat",
+"state": "Madhya Pradesh"
+},
+{
+"host": "barwani.nic.in",
+"name": "Barwani",
+"state": "Madhya Pradesh"
+},
+{
+"host": "betul.nic.in",
+"name": "Betul",
+"state": "Madhya Pradesh"
+},
+{
+"host": "bhind.nic.in",
+"name": "Bhind",
+"state": "Madhya Pradesh"
+},
+{
+"host": "bhopal.nic.in",
+"name": "Bhopal",
+"state": "Madhya Pradesh"
+},
+{
+"host": "burhanpur.nic.in",
+"name": "Burhanpur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "chhatarpur.nic.in",
+"name": "Chhatarpur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "chhindwara.nic.in",
+"name": "Chhindwara",
+"state": "Madhya Pradesh"
+},
+{
+"host": "damoh.nic.in",
+"name": "Damoh",
+"state": "Madhya Pradesh"
+},
+{
+"host": "datia.nic.in",
+"name": "Datia",
+"state": "Madhya Pradesh"
+},
+{
+"host": "dewas.nic.in",
+"name": "Dewas",
+"state": "Madhya Pradesh"
+},
+{
+"host": "dhar.nic.in",
+"name": "Dhar",
+"state": "Madhya Pradesh"
+},
+{
+"host": "dindori.nic.in",
+"name": "Dindori",
+"state": "Madhya Pradesh"
+},
+{
+"host": "guna.nic.in",
+"name": "Guna",
+"state": "Madhya Pradesh"
+},
+{
+"host": "gwalior.nic.in",
+"name": "Gwalior",
+"state": "Madhya Pradesh"
+},
+{
+"host": "harda.nic.in",
+"name": "Harda",
+"state": "Madhya Pradesh"
+},
+{
+"host": "indore.nic.in",
+"name": "Indore",
+"state": "Madhya Pradesh"
+},
+{
+"host": "jabalpur.nic.in",
+"name": "Jabalpur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "jhabua.nic.in",
+"name": "Jhabua",
+"state": "Madhya Pradesh"
+},
+{
+"host": "katni.nic.in",
+"name": "Katni",
+"state": "Madhya Pradesh"
+},
+{
+"host": "khandwa.nic.in",
+"name": "Khandwa (East Nimar)",
+"state": "Madhya Pradesh"
+},
+{
+"host": "khargone.nic.in",
+"name": "Khargone (West Nimar)",
+"state": "Madhya Pradesh"
+},
+{
+"host": "mandla.nic.in",
+"name": "Mandla",
+"state": "Madhya Pradesh"
+},
+{
+"host": "mandsaur.nic.in",
+"name": "Mandsaur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "mauganj.nic.in",
+"name": "MAUGANJ",
+"state": "Madhya Pradesh"
+},
+{
+"host": "morena.nic.in",
+"name": "Morena",
+"state": "Madhya Pradesh"
+},
+{
+"host": "narmadapuram.nic.in",
+"name": "Narmadapuram",
+"state": "Madhya Pradesh"
+},
+{
+"host": "narsinghpur.nic.in",
+"name": "Narsimhapur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "neemuch.nic.in",
+"name": "Neemuch",
+"state": "Madhya Pradesh"
+},
+{
+"host": "niwari.nic.in",
+"name": "Niwari",
+"state": "Madhya Pradesh"
+},
+{
+"host": "panna.nic.in",
+"name": "Panna",
+"state": "Madhya Pradesh"
+},
+{
+"host": "raisen.nic.in",
+"name": "Raisen",
+"state": "Madhya Pradesh"
+},
+{
+"host": "rajgarh.nic.in",
+"name": "Rajgarh",
+"state": "Madhya Pradesh"
+},
+{
+"host": "ratlam.nic.in",
+"name": "Ratlam",
+"state": "Madhya Pradesh"
+},
+{
+"host": "rewa.nic.in",
+"name": "Rewa",
+"state": "Madhya Pradesh"
+},
+{
+"host": "sagar.nic.in",
+"name": "Sagar",
+"state": "Madhya Pradesh"
+},
+{
+"host": "satna.nic.in",
+"name": "Satna",
+"state": "Madhya Pradesh"
+},
+{
+"host": "sehore.nic.in",
+"name": "Sehore",
+"state": "Madhya Pradesh"
+},
+{
+"host": "seoni.nic.in",
+"name": "Seoni",
+"state": "Madhya Pradesh"
+},
+{
+"host": "shahdol.nic.in",
+"name": "Shahdol",
+"state": "Madhya Pradesh"
+},
+{
+"host": "shajapur.nic.in",
+"name": "Shajapur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "sheopur.nic.in",
+"name": "Sheopur",
+"state": "Madhya Pradesh"
+},
+{
+"host": "shivpuri.nic.in",
+"name": "Shivpuri",
+"state": "Madhya Pradesh"
+},
+{
+"host": "sidhi.nic.in",
+"name": "Sidhi",
+"state": "Madhya Pradesh"
+},
+{
+"host": "singrauli.nic.in",
+"name": "Singrauli",
+"state": "Madhya Pradesh"
+},
+{
+"host": "tikamgarh.nic.in",
+"name": "Tikamgarh",
+"state": "Madhya Pradesh"
+},
+{
+"host": "ujjain.nic.in",
+"name": "Ujjain",
+"state": "Madhya Pradesh"
+},
+{
+"host": "umaria.nic.in",
+"name": "Umaria",
+"state": "Madhya Pradesh"
+},
+{
+"host": "vidisha.nic.in",
+"name": "Vidisha",
+"state": "Madhya Pradesh"
+},
+{
+"host": "ahmednagar.nic.in",
+"name": "Ahilyanagar",
+"state": "Maharashtra"
+},
+{
+"host": "akola.gov.in",
+"name": "Akola",
+"state": "Maharashtra"
+},
+{
+"host": "amravati.gov.in",
+"name": "Amravati",
+"state": "Maharashtra"
+},
+{
+"host": "beed.gov.in",
+"name": "Beed",
+"state": "Maharashtra"
+},
+{
+"host": "bhandara.gov.in",
+"name": "Bhandara",
+"state": "Maharashtra"
+},
+{
+"host": "buldhana.nic.in",
+"name": "Buldhana",
+"state": "Maharashtra"
+},
+{
+"host": "chanda.nic.in",
+"name": "Chandrapur",
+"state": "Maharashtra"
+},
+{
+"host": "dhule.gov.in",
+"name": "Dhule",
+"state": "Maharashtra"
+},
+{
+"host": "gadchiroli.gov.in",
+"name": "Gadchiroli",
+"state": "Maharashtra"
+},
+{
+"host": "gondia.gov.in",
+"name": "Gondia",
+"state": "Maharashtra"
+},
+{
+"host": "hingoli.nic.in",
+"name": "Hingoli",
+"state": "Maharashtra"
+},
+{
+"host": "jalgaon.gov.in",
+"name": "Jalgaon",
+"state": "Maharashtra"
+},
+{
+"host": "jalna.gov.in",
+"name": "Jalna",
+"state": "Maharashtra"
+},
+{
+"host": "kolhapur.gov.in",
+"name": "Kolhapur",
+"state": "Maharashtra"
+},
+{
+"host": "latur.gov.in",
+"name": "Latur",
+"state": "Maharashtra"
+},
+{
+"host": "mumbaicity.gov.in",
+"name": "Mumbai",
+"state": "Maharashtra"
+},
+{
+"host": "mumbaisuburban.gov.in",
+"name": "Mumbai Suburban",
+"state": "Maharashtra"
+},
+{
+"host": "nagpur.gov.in",
+"name": "Nagpur",
+"state": "Maharashtra"
+},
+{
+"host": "nanded.gov.in",
+"name": "Nanded",
+"state": "Maharashtra"
+},
+{
+"host": "nandurbar.gov.in",
+"name": "Nandurbar",
+"state": "Maharashtra"
+},
+{
+"host": "nashik.gov.in",
+"name": "Nashik",
+"state": "Maharashtra"
+},
+{
+"host": "parbhani.gov.in",
+"name": "Parbhani",
+"state": "Maharashtra"
+},
+{
+"host": "pune.gov.in",
+"name": "Pune",
+"state": "Maharashtra"
+},
+{
+"host": "raigad.gov.in",
+"name": "Raigad",
+"state": "Maharashtra"
+},
+{
+"host": "ratnagiri.gov.in",
+"name": "Ratnagiri",
+"state": "Maharashtra"
+},
+{
+"host": "sangli.nic.in",
+"name": "Sangli",
+"state": "Maharashtra"
+},
+{
+"host": "sindhudurg.nic.in",
+"name": "Sindhudurg",
+"state": "Maharashtra"
+},
+{
+"host": "solapur.gov.in",
+"name": "Solapur",
+"state": "Maharashtra"
+},
+{
+"host": "thane.nic.in",
+"name": "Thane",
+"state": "Maharashtra"
+},
+{
+"host": "wardha.gov.in",
+"name": "Wardha",
+"state": "Maharashtra"
+},
+{
+"host": "washim.gov.in",
+"name": "Washim",
+"state": "Maharashtra"
+},
+{
+"host": "www.satara.gov.in",
+"name": "Satara",
+"state": "Maharashtra"
+},
+{
+"host": "yavatmal.gov.in",
+"name": "Yavatmal",
+"state": "Maharashtra"
+},
+{
+"host": "bishnupur.nic.in",
+"name": "Bishnupur",
+"state": "Manipur"
+},
+{
+"host": "chandel.nic.in",
+"name": "Chandel",
+"state": "Manipur"
+},
+{
+"host": "churachandpur.nic.in",
+"name": "Churachandpur",
+"state": "Manipur"
+},
+{
+"host": "imphaleast.nic.in",
+"name": "Imphal East",
+"state": "Manipur"
+},
+{
+"host": "imphalwest.nic.in",
+"name": "Imphal West",
+"state": "Manipur"
+},
+{
+"host": "kakching.nic.in",
+"name": "Kakching",
+"state": "Manipur"
+},
+{
+"host": "kamjong.nic.in",
+"name": "Kamjong",
+"state": "Manipur"
+},
+{
+"host": "kangpokpi.nic.in",
+"name": "Kangpokpi",
+"state": "Manipur"
+},
+{
+"host": "pherzawl.nic.in",
+"name": "Pherzawl",
+"state": "Manipur"
+},
+{
+"host": "senapati.nic.in",
+"name": "Senapati",
+"state": "Manipur"
+},
+{
+"host": "tamenglong.nic.in",
+"name": "Tamenglong",
+"state": "Manipur"
+},
+{
+"host": "tengnoupal.nic.in",
+"name": "Tengnoupal",
+"state": "Manipur"
+},
+{
+"host": "ukhrul.nic.in",
+"name": "Ukhrul",
+"state": "Manipur"
+},
+{
+"host": "eastgarohills.gov.in",
+"name": "East Garo Hills",
+"state": "Meghalaya"
+},
+{
+"host": "eastjaintiahills.gov.in",
+"name": "East Jaintia Hills",
+"state": "Meghalaya"
+},
+{
+"host": "eastkhasihills.gov.in",
+"name": "East Khasi Hills",
+"state": "Meghalaya"
+},
+{
+"host": "northgarohills.gov.in",
+"name": "North Garo Hills",
+"state": "Meghalaya"
+},
+{
+"host": "ribhoi.gov.in",
+"name": "Ri Bhoi",
+"state": "Meghalaya"
+},
+{
+"host": "southgarohills.gov.in",
+"name": "South Garo Hills",
+"state": "Meghalaya"
+},
+{
+"host": "southwestgarohills.gov.in",
+"name": "South West Garo Hills",
+"state": "Meghalaya"
+},
+{
+"host": "southwestkhasihills.gov.in",
+"name": "South West Khasi Hills",
+"state": "Meghalaya"
+},
+{
+"host": "westgarohills.gov.in",
+"name": "West Garo Hills",
+"state": "Meghalaya"
+},
+{
+"host": "westjaintiahills.gov.in",
+"name": "West Jaintia Hills",
+"state": "Meghalaya"
+},
+{
+"host": "westkhasihills.gov.in",
+"name": "West Khasi Hills",
+"state": "Meghalaya"
+},
+{
+"host": "aizawl.nic.in",
+"name": "Aizawl",
+"state": "Mizoram"
+},
+{
+"host": "champhai.nic.in",
+"name": "Champhai",
+"state": "Mizoram"
+},
+{
+"host": "kolasib.nic.in",
+"name": "Kolasib",
+"state": "Mizoram"
+},
+{
+"host": "lawngtlai.nic.in",
+"name": "Lawngtlai",
+"state": "Mizoram"
+},
+{
+"host": "lunglei.nic.in",
+"name": "Lunglei",
+"state": "Mizoram"
+},
+{
+"host": "mamit.nic.in",
+"name": "Mamit",
+"state": "Mizoram"
+},
+{
+"host": "serchhip.nic.in",
+"name": "Serchhip",
+"state": "Mizoram"
+},
+{
+"host": "siaha.nic.in",
+"name": "Siaha",
+"state": "Mizoram"
+},
+{
+"host": "chumoukedima.nic.in",
+"name": "Chumoukedima",
+"state": "Nagaland"
+},
+{
+"host": "dimapur.nic.in",
+"name": "Dimapur",
+"state": "Nagaland"
+},
+{
+"host": "kiphire.nic.in",
+"name": "Kiphire",
+"state": "Nagaland"
+},
+{
+"host": "kohima.nic.in",
+"name": "Kohima",
+"state": "Nagaland"
+},
+{
+"host": "longleng.nic.in",
+"name": "Longleng",
+"state": "Nagaland"
+},
+{
+"host": "mokokchung.nic.in",
+"name": "Mokokchung",
+"state": "Nagaland"
+},
+{
+"host": "mon.nic.in",
+"name": "Mon",
+"state": "Nagaland"
+},
+{
+"host": "noklak.nic.in",
+"name": "Noklak",
+"state": "Nagaland"
+},
+{
+"host": "peren-district.nic.in",
+"name": "Peren",
+"state": "Nagaland"
+},
+{
+"host": "phek.nic.in",
+"name": "Phek",
+"state": "Nagaland"
+},
+{
+"host": "shamator.nic.in",
+"name": "Shamator",
+"state": "Nagaland"
+},
+{
+"host": "tseminyu.nic.in",
+"name": "Tseminyu",
+"state": "Nagaland"
+},
+{
+"host": "tuensang.nic.in",
+"name": "Tuensang",
+"state": "Nagaland"
+},
+{
+"host": "wokha.nic.in",
+"name": "Wokha",
+"state": "Nagaland"
+},
+{
+"host": "zunheboto.nic.in",
+"name": "Zunheboto",
+"state": "Nagaland"
+},
+{
+"host": "puducherry-dt.gov.in",
+"name": "Puducherry",
+"state": "Puducherry"
+},
+{
+"host": "amritsar.nic.in",
+"name": "Amritsar",
+"state": "Punjab"
+},
+{
+"host": "barnala.gov.in",
+"name": "Barnala",
+"state": "Punjab"
+},
+{
+"host": "bathinda.nic.in",
+"name": "Bathinda",
+"state": "Punjab"
+},
+{
+"host": "faridkot.nic.in",
+"name": "Faridkot",
+"state": "Punjab"
+},
+{
+"host": "fatehgarhsahib.nic.in",
+"name": "Fatehgarh Sahib",
+"state": "Punjab"
+},
+{
+"host": "fazilka.nic.in",
+"name": "Fazilka",
+"state": "Punjab"
+},
+{
+"host": "ferozepur.nic.in",
+"name": "Ferozepur",
+"state": "Punjab"
+},
+{
+"host": "gurdaspur.nic.in",
+"name": "Gurdaspur",
+"state": "Punjab"
+},
+{
+"host": "hoshiarpur.nic.in",
+"name": "Hoshiarpur",
+"state": "Punjab"
+},
+{
+"host": "jalandhar.nic.in",
+"name": "Jalandhar",
+"state": "Punjab"
+},
+{
+"host": "kapurthala.gov.in",
+"name": "Kapurthala",
+"state": "Punjab"
+},
+{
+"host": "ludhiana.nic.in",
+"name": "Ludhiana",
+"state": "Punjab"
+},
+{
+"host": "malerkotla.nic.in",
+"name": "Malerkotla",
+"state": "Punjab"
+},
+{
+"host": "mansa.nic.in",
+"name": "Mansa",
+"state": "Punjab"
+},
+{
+"host": "moga.nic.in",
+"name": "Moga",
+"state": "Punjab"
+},
+{
+"host": "muktsar.nic.in",
+"name": "Sri Muktsar Sahib",
+"state": "Punjab"
+},
+{
+"host": "nawanshahr.nic.in",
+"name": "Shahid Bhagat Singh Nagar",
+"state": "Punjab"
+},
+{
+"host": "pathankot.nic.in",
+"name": "Pathankot",
+"state": "Punjab"
+},
+{
+"host": "patiala.nic.in",
+"name": "Patiala",
+"state": "Punjab"
+},
+{
+"host": "rupnagar.nic.in",
+"name": "Rupnagar",
+"state": "Punjab"
+},
+{
+"host": "sangrur.nic.in",
+"name": "Sangrur",
+"state": "Punjab"
+},
+{
+"host": "sasnagar.nic.in",
+"name": "S.A.S Nagar",
+"state": "Punjab"
+},
+{
+"host": "tarntaran.nic.in",
+"name": "Tarn Taran",
+"state": "Punjab"
+},
+{
+"host": "mangan.nic.in",
+"name": "Mangan",
+"state": "Sikkim"
+},
+{
+"host": "soreng.nic.in",
+"name": "Soreng",
+"state": "Sikkim"
+},
+{
+"host": "ariyalur.nic.in",
+"name": "Ariyalur",
+"state": "Tamil Nadu"
+},
+{
+"host": "chengalpattu.nic.in",
+"name": "Chengalpattu",
+"state": "Tamil Nadu"
+},
+{
+"host": "chennai.nic.in",
+"name": "Chennai",
+"state": "Tamil Nadu"
+},
+{
+"host": "coimbatore.nic.in",
+"name": "Coimbatore",
+"state": "Tamil Nadu"
+},
+{
+"host": "cuddalore.nic.in",
+"name": "Cuddalore",
+"state": "Tamil Nadu"
+},
+{
+"host": "dharmapuri.nic.in",
+"name": "Dharmapuri",
+"state": "Tamil Nadu"
+},
+{
+"host": "dindigul.nic.in",
+"name": "Dindigul",
+"state": "Tamil Nadu"
+},
+{
+"host": "erode.nic.in",
+"name": "Erode",
+"state": "Tamil Nadu"
+},
+{
+"host": "kallakurichi.nic.in",
+"name": "Kallakurichi",
+"state": "Tamil Nadu"
+},
+{
+"host": "kancheepuram.nic.in",
+"name": "Kancheepuram",
+"state": "Tamil Nadu"
+},
+{
+"host": "kanniyakumari.nic.in",
+"name": "Kanniyakumari",
+"state": "Tamil Nadu"
+},
+{
+"host": "karur.nic.in",
+"name": "Karur",
+"state": "Tamil Nadu"
+},
+{
+"host": "krishnagiri.nic.in",
+"name": "Krishnagiri",
+"state": "Tamil Nadu"
+},
+{
+"host": "madurai.nic.in",
+"name": "Madurai",
+"state": "Tamil Nadu"
+},
+{
+"host": "mayiladuthurai.nic.in",
+"name": "Mayiladuthurai",
+"state": "Tamil Nadu"
+},
+{
+"host": "namakkal.nic.in",
+"name": "Namakkal",
+"state": "Tamil Nadu"
+},
+{
+"host": "nilgiris.nic.in",
+"name": "The Nilgiris",
+"state": "Tamil Nadu"
+},
+{
+"host": "perambalur.nic.in",
+"name": "Perambalur",
+"state": "Tamil Nadu"
+},
+{
+"host": "pudukkottai.nic.in",
+"name": "Pudukkottai",
+"state": "Tamil Nadu"
+},
+{
+"host": "ramanathapuram.nic.in",
+"name": "Ramanathapuram",
+"state": "Tamil Nadu"
+},
+{
+"host": "salem.nic.in",
+"name": "Salem",
+"state": "Tamil Nadu"
+},
+{
+"host": "sivaganga.nic.in",
+"name": "Sivaganga",
+"state": "Tamil Nadu"
+},
+{
+"host": "tenkasi.nic.in",
+"name": "Tenkasi",
+"state": "Tamil Nadu"
+},
+{
+"host": "thanjavur.nic.in",
+"name": "Thanjavur",
+"state": "Tamil Nadu"
+},
+{
+"host": "theni.nic.in",
+"name": "Theni",
+"state": "Tamil Nadu"
+},
+{
+"host": "thoothukudi.nic.in",
+"name": "Thoothukkudi",
+"state": "Tamil Nadu"
+},
+{
+"host": "tiruchirappalli.nic.in",
+"name": "Tiruchirappalli",
+"state": "Tamil Nadu"
+},
+{
+"host": "tirunelveli.nic.in",
+"name": "Tirunelveli",
+"state": "Tamil Nadu"
+},
+{
+"host": "tirupathur.nic.in",
+"name": "Tirupathur",
+"state": "Tamil Nadu"
+},
+{
+"host": "tiruppur.nic.in",
+"name": "Tiruppur",
+"state": "Tamil Nadu"
+},
+{
+"host": "tiruvallur.nic.in",
+"name": "Thiruvallur",
+"state": "Tamil Nadu"
+},
+{
+"host": "tiruvannamalai.nic.in",
+"name": "Tiruvannamalai",
+"state": "Tamil Nadu"
+},
+{
+"host": "tiruvarur.nic.in",
+"name": "Thiruvarur",
+"state": "Tamil Nadu"
+},
+{
+"host": "vellore.nic.in",
+"name": "Vellore",
+"state": "Tamil Nadu"
+},
+{
+"host": "viluppuram.nic.in",
+"name": "Viluppuram",
+"state": "Tamil Nadu"
+},
+{
+"host": "virudhunagar.nic.in",
+"name": "Virudhunagar",
+"state": "Tamil Nadu"
+},
+{
+"host": "www.nagapattinam.nic.in",
+"name": "Nagapattinam",
+"state": "Tamil Nadu"
+},
+{
+"host": "adilabad.telangana.gov.in",
+"name": "Adilabad",
+"state": "Telangana"
+},
+{
+"host": "gadwal.telangana.gov.in",
+"name": "Jogulamba Gadwal",
+"state": "Telangana"
+},
+{
+"host": "hyderabad.telangana.gov.in",
+"name": "Hyderabad",
+"state": "Telangana"
+},
+{
+"host": "jagtial.telangana.gov.in",
+"name": "Jagitial",
+"state": "Telangana"
+},
+{
+"host": "jangaon.telangana.gov.in",
+"name": "Jangoan",
+"state": "Telangana"
+},
+{
+"host": "karimnagar.telangana.gov.in",
+"name": "Karimnagar",
+"state": "Telangana"
+},
+{
+"host": "khammam.telangana.gov.in",
+"name": "Khammam",
+"state": "Telangana"
+},
+{
+"host": "medak.telangana.gov.in",
+"name": "Medak",
+"state": "Telangana"
+},
+{
+"host": "nalgonda.telangana.gov.in",
+"name": "Nalgonda",
+"state": "Telangana"
+},
+{
+"host": "nirmal.telangana.gov.in",
+"name": "Nirmal",
+"state": "Telangana"
+},
+{
+"host": "nizamabad.telangana.gov.in",
+"name": "Nizamabad",
+"state": "Telangana"
+},
+{
+"host": "rangareddy.telangana.gov.in",
+"name": "Ranga Reddy",
+"state": "Telangana"
+},
+{
+"host": "siddipet.telangana.gov.in",
+"name": "Siddipet",
+"state": "Telangana"
+},
+{
+"host": "dhalai.nic.in",
+"name": "Dhalai",
+"state": "Tripura"
+},
+{
+"host": "gomati.nic.in",
+"name": "Gomati",
+"state": "Tripura"
+},
+{
+"host": "khowai.nic.in",
+"name": "Khowai",
+"state": "Tripura"
+},
+{
+"host": "northtripura.nic.in",
+"name": "North Tripura",
+"state": "Tripura"
+},
+{
+"host": "sepahijala.nic.in",
+"name": "Sepahijala",
+"state": "Tripura"
+},
+{
+"host": "southtripura.nic.in",
+"name": "South Tripura",
+"state": "Tripura"
+},
+{
+"host": "tripura.nic.in",
+"name": "एनआईसी त्रिपुरा राज्य केंद्र | त्रिपुरा में डिजिटल इंडिया पहल को आगे बढ़ाना | भारत",
+"state": "Tripura"
+},
+{
+"host": "unakoti.nic.in",
+"name": "Unakoti",
+"state": "Tripura"
+},
+{
+"host": "westtripura.nic.in",
+"name": "West Tripura",
+"state": "Tripura"
+},
+{
+"host": "agra.nic.in",
+"name": "Agra",
+"state": "Uttar Pradesh"
+},
+{
+"host": "aligarh.nic.in",
+"name": "Aligarh",
+"state": "Uttar Pradesh"
+},
+{
+"host": "ambedkarnagar.nic.in",
+"name": "Ambedkar Nagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "amethi.nic.in",
+"name": "Amethi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "amroha.nic.in",
+"name": "Amroha",
+"state": "Uttar Pradesh"
+},
+{
+"host": "auraiya.nic.in",
+"name": "Auraiya",
+"state": "Uttar Pradesh"
+},
+{
+"host": "ayodhya.nic.in",
+"name": "Ayodhya",
+"state": "Uttar Pradesh"
+},
+{
+"host": "azamgarh.nic.in",
+"name": "Azamgarh",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bagpat.nic.in",
+"name": "Baghpat",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bahraich.nic.in",
+"name": "Bahraich",
+"state": "Uttar Pradesh"
+},
+{
+"host": "ballia.nic.in",
+"name": "Ballia",
+"state": "Uttar Pradesh"
+},
+{
+"host": "balrampur.nic.in",
+"name": "Balrampur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "banda.nic.in",
+"name": "Banda",
+"state": "Uttar Pradesh"
+},
+{
+"host": "barabanki.nic.in",
+"name": "Bara Banki",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bareilly.nic.in",
+"name": "Bareilly",
+"state": "Uttar Pradesh"
+},
+{
+"host": "basti.nic.in",
+"name": "Basti",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bhadohi.nic.in",
+"name": "Bhadohi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bijnor.nic.in",
+"name": "Bijnor",
+"state": "Uttar Pradesh"
+},
+{
+"host": "budaun.nic.in",
+"name": "Budaun",
+"state": "Uttar Pradesh"
+},
+{
+"host": "bulandshahar.nic.in",
+"name": "Bulandshahr",
+"state": "Uttar Pradesh"
+},
+{
+"host": "chandauli.nic.in",
+"name": "Chandauli",
+"state": "Uttar Pradesh"
+},
+{
+"host": "chitrakoot.nic.in",
+"name": "Chitrakoot",
+"state": "Uttar Pradesh"
+},
+{
+"host": "deoria.nic.in",
+"name": "Deoria",
+"state": "Uttar Pradesh"
+},
+{
+"host": "etah.nic.in",
+"name": "Etah",
+"state": "Uttar Pradesh"
+},
+{
+"host": "etawah.nic.in",
+"name": "Etawah",
+"state": "Uttar Pradesh"
+},
+{
+"host": "farrukhabad.nic.in",
+"name": "Farrukhabad",
+"state": "Uttar Pradesh"
+},
+{
+"host": "fatehpur.nic.in",
+"name": "Fatehpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "firozabad.nic.in",
+"name": "Firozabad",
+"state": "Uttar Pradesh"
+},
+{
+"host": "gbnagar.nic.in",
+"name": "Gautam Buddha Nagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "ghaziabad.nic.in",
+"name": "Ghaziabad",
+"state": "Uttar Pradesh"
+},
+{
+"host": "ghazipur.nic.in",
+"name": "Ghazipur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "gonda.nic.in",
+"name": "Gonda",
+"state": "Uttar Pradesh"
+},
+{
+"host": "gorakhpur.nic.in",
+"name": "Gorakhpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "hamirpur.nic.in",
+"name": "Hamirpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "hapur.nic.in",
+"name": "Hapur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "hardoi.nic.in",
+"name": "Hardoi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "hathras.nic.in",
+"name": "Hathras",
+"state": "Uttar Pradesh"
+},
+{
+"host": "jalaun.nic.in",
+"name": "Jalaun",
+"state": "Uttar Pradesh"
+},
+{
+"host": "jaunpur.nic.in",
+"name": "Jaunpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "jhansi.nic.in",
+"name": "Jhansi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kannauj.nic.in",
+"name": "Kannauj",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kanpurdehat.nic.in",
+"name": "Kanpur Dehat",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kanpurnagar.nic.in",
+"name": "Kanpur Nagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kasganj.nic.in",
+"name": "Kasganj",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kaushambi.nic.in",
+"name": "Kaushambi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kheri.nic.in",
+"name": "Kheri",
+"state": "Uttar Pradesh"
+},
+{
+"host": "kushinagar.nic.in",
+"name": "Kushinagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "lalitpur.nic.in",
+"name": "Lalitpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "lucknow.nic.in",
+"name": "Lucknow",
+"state": "Uttar Pradesh"
+},
+{
+"host": "maharajganj.nic.in",
+"name": "Mahrajganj",
+"state": "Uttar Pradesh"
+},
+{
+"host": "mahoba.nic.in",
+"name": "Mahoba",
+"state": "Uttar Pradesh"
+},
+{
+"host": "mainpuri.nic.in",
+"name": "Mainpuri",
+"state": "Uttar Pradesh"
+},
+{
+"host": "mathura.nic.in",
+"name": "Mathura",
+"state": "Uttar Pradesh"
+},
+{
+"host": "mau.nic.in",
+"name": "Mau",
+"state": "Uttar Pradesh"
+},
+{
+"host": "meerut.nic.in",
+"name": "Meerut",
+"state": "Uttar Pradesh"
+},
+{
+"host": "mirzapur.nic.in",
+"name": "Mirzapur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "moradabad.nic.in",
+"name": "Moradabad",
+"state": "Uttar Pradesh"
+},
+{
+"host": "muzaffarnagar.nic.in",
+"name": "Muzaffarnagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "pilibhit.nic.in",
+"name": "Pilibhit",
+"state": "Uttar Pradesh"
+},
+{
+"host": "pratapgarh.nic.in",
+"name": "Pratapgarh",
+"state": "Uttar Pradesh"
+},
+{
+"host": "prayagraj.nic.in",
+"name": "Prayagraj",
+"state": "Uttar Pradesh"
+},
+{
+"host": "raebareli.nic.in",
+"name": "Rae Bareli",
+"state": "Uttar Pradesh"
+},
+{
+"host": "rampur.nic.in",
+"name": "Rampur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "saharanpur.nic.in",
+"name": "Saharanpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "sambhal.nic.in",
+"name": "Sambhal",
+"state": "Uttar Pradesh"
+},
+{
+"host": "shahjahanpur.nic.in",
+"name": "Shahjahanpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "shamli.nic.in",
+"name": "Shamli",
+"state": "Uttar Pradesh"
+},
+{
+"host": "shravasti.nic.in",
+"name": "Shrawasti",
+"state": "Uttar Pradesh"
+},
+{
+"host": "siddharthnagar.nic.in",
+"name": "Siddharthnagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "sitapur.nic.in",
+"name": "Sitapur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "sknagar.nic.in",
+"name": "Sant Kabir Nagar",
+"state": "Uttar Pradesh"
+},
+{
+"host": "sonbhadra.nic.in",
+"name": "Sonbhadra",
+"state": "Uttar Pradesh"
+},
+{
+"host": "sultanpur.nic.in",
+"name": "Sultanpur",
+"state": "Uttar Pradesh"
+},
+{
+"host": "unnao.nic.in",
+"name": "Unnao",
+"state": "Uttar Pradesh"
+},
+{
+"host": "varanasi.nic.in",
+"name": "Varanasi",
+"state": "Uttar Pradesh"
+},
+{
+"host": "almora.nic.in",
+"name": "Almora",
+"state": "Uttarakhand"
+},
+{
+"host": "bageshwar.nic.in",
+"name": "Bageshwar",
+"state": "Uttarakhand"
+},
+{
+"host": "chamoli.gov.in",
+"name": "Chamoli",
+"state": "Uttarakhand"
+},
+{
+"host": "champawat.nic.in",
+"name": "Champawat",
+"state": "Uttarakhand"
+},
+{
+"host": "dehradun.nic.in",
+"name": "Dehradun",
+"state": "Uttarakhand"
+},
+{
+"host": "haridwar.nic.in",
+"name": "Haridwar",
+"state": "Uttarakhand"
+},
+{
+"host": "nainital.nic.in",
+"name": "Nainital",
+"state": "Uttarakhand"
+},
+{
+"host": "pauri.nic.in",
+"name": "Pauri Garhwal",
+"state": "Uttarakhand"
+},
+{
+"host": "pithoragarh.nic.in",
+"name": "Pithoragarh",
+"state": "Uttarakhand"
+},
+{
+"host": "rudraprayag.gov.in",
+"name": "Rudraprayag",
+"state": "Uttarakhand"
+},
+{
+"host": "usnagar.nic.in",
+"name": "Udham Singh Nagar",
+"state": "Uttarakhand"
+},
+{
+"host": "uttarkashi.nic.in",
+"name": "Uttarkashi",
+"state": "Uttarakhand"
+},
+{
+"host": "alipurduar.gov.in",
+"name": "Alipurduar",
+"state": "West Bengal"
+},
+{
+"host": "bankura.gov.in",
+"name": "Bankura",
+"state": "West Bengal"
+},
+{
+"host": "birbhum.gov.in",
+"name": "Birbhum",
+"state": "West Bengal"
+},
+{
+"host": "coochbehar.gov.in",
+"name": "Cooch Behar",
+"state": "West Bengal"
+},
+{
+"host": "darjeeling.gov.in",
+"name": "Darjeeling",
+"state": "West Bengal"
+},
+{
+"host": "ddinajpur.nic.in",
+"name": "Dakshin Dinajpur",
+"state": "West Bengal"
+},
+{
+"host": "hooghly.nic.in",
+"name": "Hooghly",
+"state": "West Bengal"
+},
+{
+"host": "howrah.gov.in",
+"name": "Howrah",
+"state": "West Bengal"
+},
+{
+"host": "jalpaiguri.gov.in",
+"name": "Jalpaiguri",
+"state": "West Bengal"
+},
+{
+"host": "jhargram.gov.in",
+"name": "Jhargram",
+"state": "West Bengal"
+},
+{
+"host": "kalimpong.gov.in",
+"name": "Kalimpong",
+"state": "West Bengal"
+},
+{
+"host": "malda.gov.in",
+"name": "Malda",
+"state": "West Bengal"
+},
+{
+"host": "murshidabad.gov.in",
+"name": "Murshidabad",
+"state": "West Bengal"
+},
+{
+"host": "nadia.gov.in",
+"name": "Nadia",
+"state": "West Bengal"
+},
+{
+"host": "north24parganas.gov.in",
+"name": "North 24 Parganas",
+"state": "West Bengal"
+},
+{
+"host": "paschimbardhaman.gov.in",
+"name": "Paschim Bardhaman",
+"state": "West Bengal"
+},
+{
+"host": "paschimmedinipur.gov.in",
+"name": "Paschim Medinipur",
+"state": "West Bengal"
+},
+{
+"host": "purbabardhaman.nic.in",
+"name": "Purba Bardhaman",
+"state": "West Bengal"
+},
+{
+"host": "purbamedinipur.gov.in",
+"name": "Purba Medinipur",
+"state": "West Bengal"
+},
+{
+"host": "purulia.gov.in",
+"name": "Purulia",
+"state": "West Bengal"
+},
+{
+"host": "s24pgs.gov.in",
+"name": "South 24 Parganas",
+"state": "West Bengal"
+},
+{
+"host": "uttardinajpur.gov.in",
+"name": "Uttar Dinajpur",
+"state": "West Bengal"
+}
+]
+}
