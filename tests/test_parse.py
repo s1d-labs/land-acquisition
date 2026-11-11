@@ -164,5 +164,66 @@ def test_land_titles_and_tags():
     assert not districts.is_land("Circular regarding Manipur Victim Compensation Scheme, 2019")
     assert not districts.is_land("Good Governance Awards")
     assert not districts.is_land("Bihar Education Project, Bhagalpur: Application Form for Teacher Award-2024")
-    assert districts.tags_of("Notice regarding Camp for compensation of Land.") == ["payment"]
+    assert districts.tags_of("Notice regarding Camp for compensation of Land.") == ["payment", "notice"]
     assert districts.tags_of("Payable amount of compensation for the acquisition of land for New B.G. Railway line") == ["payment", "railway"]
+
+
+# Fixes after the pilot (2026-11-11): language versions, land acquisition pages, regional words, wider tags.
+def s3(name):
+    return (PAGES / f"s3waas-{name}.html").read_text(encoding="utf-8")
+
+
+def test_home_page_gives_languages_and_land_pages():
+    home = s3("solapur-home")
+    assert districts.languages(home, "solapur.gov.in") == ["en/"]            # the root is Marathi; the awards are under /en/
+    pages, items = districts.land_links(home, "solapur.gov.in")
+    assert any("%e0%a4%ad%e0%a5%82-%e0%a4%b8%e0%a4%82%e0%a4%aa%e0%a4%be%e0%a4%a6%e0%a4%a8" in u for u in pages)   # भू संपादन
+    assert all("/notice/" in u or "/document/" in u for u, _ in items)
+
+
+def test_english_search_finds_the_solapur_awards():
+    res, last = districts.results(s3("solapur-en-search-award"), "solapur.gov.in")
+    assert last == 1 and len(res) == 2
+    assert all(districts.is_land(t) for _, t in res)
+    assert all("award" in districts.tags_of(t) for _, t in res)
+
+
+def test_land_page_table_karimnagar():
+    es, links, last = districts.listing(s3("karimnagar-land-page"), "https://karimnagar.telangana.gov.in/land-acquisition-notifications/")
+    assert len(es) == 94 and last == 1
+    e = es[0]
+    assert e["fields"]["Project Name"] == "Irrigation Projects" and e["fields"]["Mandal"] == "Gangadhara"
+    assert e["dates"] == ["2026-11-03"] and len(e["pdf_urls"]) == 1
+    assert len({x["pdf_urls"][0] for x in es}) == 94                        # one record id per row
+
+
+def test_land_page_lists_chaibasa():
+    es, _, _ = districts.listing(s3("chaibasa-land-page"), "https://chaibasa.nic.in/land-acquisitionnotification/")
+    assert len(es) == 71
+    assert es[0]["section"] == "Prarambhik Adhisoochna" and es[0]["dates"] == ["2026-04-13"]
+    assert "sec_19" in districts.tags_of(es[0]["title"])                     # "Adhighosna" = declaration (section 19)
+
+
+def test_land_category_solapur_is_paged():
+    es, _, last = districts.listing(s3("solapur-land-category"), "https://solapur.gov.in/document-category/x/")
+    assert len(es) == 10 and last == 2 and es[0]["section"] == "भू संपादन"
+    assert districts.tags_of(es[1]["title"]) == ["sec_19"]                  # "... कलम 19 प्रकाशन"
+
+
+def test_pilot_titles_get_tags():
+    t = districts.tags_of
+    assert t("भू-अर्जन प्रकरण/अधिसूचना/जनसुनवाई [ग्राम/नगर – टुरटुरा, तहसील-लैलूँगा, जिला-रायगढ़]") == ["hearing", "notice"]
+    assert t("भू-अर्जन प्रकरण [ग्राम – जामगाँव, तहसील-रायगढ़, जिला-रायगढ़] – जनसुनवाई दिनांक – 13.02.2026") == ["hearing"]
+    assert t("3G(3) പബ്ലിക് ഹിയറിംഗ് നോട്ടീസ്") == ["hearing", "notice"]     # malappuram: the claims hearing, not the award
+    assert "award" in t("Award of Compensation u/s 3G & 3H of the National Highways act,1956")
+    assert t("Land Acquisition-Preliminary Notification (Under Section-11(1) of the Act-30/2013)") == ["sec_11", "notice"]
+    assert t("Order (District Land Acquisition office)") == ["order"]
+    assert "award" in t("ग्राम तिलणी की अनुसूची-02 भूमि अर्जन अधिनिमय, 2013 की धारा-31 में प्रतिकर अवार्ड का सूचना पट्ट")
+
+
+def test_regional_words():
+    assert districts.is_land("भूसंपादन महाराष्ट्र शक्तीपीठ द्रुतगती महामार्ग प्रकल्प कलम 15 (२) ची अधिसुचना")
+    assert districts.is_land("Click here to see the Awards of Hingani Nipani, Bhoyre, Kalaman, Khuneshwar, Padsali")
+    assert districts.is_land("భూసేకరణ నోటిఫికేషన్")
+    assert not districts.is_land("Awards")
+    assert districts.STATE_TERMS["Maharashtra"][0] == "भूसंपादन"

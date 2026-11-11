@@ -126,16 +126,26 @@ PROJECTS.append({
 })
 
 # G14, phase 2: land acquisition awards and notices on district collectorate websites (S3WaaS). One queue item per site, from
-# data/s3waas_districts.json (600 sites). First pool run: the pilot sites only; set DISTRICTS_ALL = True after checking them.
+# data/s3waas_districts.json (600 sites). The pilot (10 sites, keys = the host) ran on 2026-11-11 with the first version of
+# districts.py. Round 2 (keys "r2:<host>") reads all 600 sites with the language versions, the land acquisition pages and the
+# regional words. The hub keeps done keys, so a new round (DISTRICTS_ROUND + 1) is the way to read every site again; the record
+# ids do not depend on the key, so a new round updates the records it finds again.
 DISTRICTS = json.loads((HERE / "data" / "s3waas_districts.json").read_text())["hosts"]
-DISTRICTS_ALL = False
+DISTRICTS_ALL = True
+DISTRICTS_ROUND = 2
 DISTRICTS_PILOT = ["imphalwest.nic.in", "raigarh.gov.in", "rudraprayag.gov.in", "solapur.gov.in", "chatra.nic.in",
                    "karimnagar.telangana.gov.in", "buxar.nic.in", "bhagalpur.nic.in", "malappuram.nic.in", "jalaun.nic.in"]
+# Land acquisition pages that the home page menu does not link (the task finds the linked ones by itself).
+EXTRA_PAGES = {
+    "karimnagar.telangana.gov.in": ["https://karimnagar.telangana.gov.in/land-acquisition-notifications/"],
+    "chaibasa.nic.in": ["https://chaibasa.nic.in/land-acquisitionnotification/"],
+}
 
 
 def district_items():
     hosts = DISTRICTS if DISTRICTS_ALL else [h for h in DISTRICTS if h["host"] in DISTRICTS_PILOT]
-    return [{"key": h["host"], "payload": h} for h in hosts]
+    return [{"key": f"r{DISTRICTS_ROUND}:{h['host']}",
+             "payload": {**h, **({"pages": EXTRA_PAGES[h["host"]]} if h["host"] in EXTRA_PAGES else {})}} for h in hosts]
 
 
 PROJECTS.append({

@@ -8,7 +8,7 @@ This family collects official notices of land acquisition from the gazettes of I
 |---|---|---|
 | `land-acquisition-egazette` | egazette.gov.in (Gazette of India: central ministries and Delhi) | Complete (216,930 gazettes, 9 November 2026) |
 | `land-acquisition-bhoomirashi` | bhoomirashi.gov.in (land acquisition portal of MoRTH: national highways) | Complete (1,582,923 parcels, 9 November 2026) |
-| `land-acquisition-districts` | District websites on S3WaaS (600 sites) | Pilot (G14, phase 2: 10 sites) |
+| `land-acquisition-districts` | District websites on S3WaaS (600 sites) | Running (G14, phase 2: round 2, all 600 sites) |
 | State gazettes | One site for each state | Survey in progress |
 
 ## What the bhoomirashi project collects
@@ -33,13 +33,21 @@ myproxy run python bhoomirashi.py --local GOA
 
 - Most district websites use one template (S3WaaS). Each site has a public search (`/?s=<word>`).
 - The project searches each site for 8 words: `award`, `land acquisition`, `compensation`, `3G`, `अवार्ड`, `अधिनिर्णय`, `भू-अर्जन`, `मुआवजा`.
+- It also searches for the words of the state language (`STATE_TERMS` in `districts.py`). An example is `भूसंपादन` in Maharashtra.
+- It searches each language version of the site that the home page links to. An example is `solapur.gov.in/en/`. The root of that site is in Marathi.
 - It keeps only the results about land acquisition. It drops prizes ("Good Governance Awards") and other compensation (victims, crops, disasters).
 - It opens each result and stores one record: site, state, title, description, dates, PDF links and tags.
-- The tags are `award`, `payment`, `arbitration`, `nh`, `railway`, `notice_3a`, `notice_3d`, `sec_11`, `sec_19`, `sia` and `rnr`.
+- Some sites keep their documents on a page that the search does not find. Examples are `karimnagar.telangana.gov.in/land-acquisition-notifications/` and the Solapur category "भू संपादन".
+  - The project reads the land acquisition links of the home page menus, and the pages in `EXTRA_PAGES` in `family.py`.
+  - It stores one record for each table row or list item with a PDF. The record type is `listing`.
+- When two language versions give the same PDF, the project stores only one record.
+- The tags are `award`, `payment`, `arbitration`, `nh`, `railway`, `notice_3a`, `notice_3d`, `sec_11`, `sec_19`, `sia`, `hearing`, `rnr`, `notice` and `order`.
+- The tag `hearing` is for public hearings and claims and objections. A notice under section 3G(3) has the tag `hearing`, not `award`.
 - It downloads the PDFs of awards and payment lists to `land-acquisition-districts/pdf/<site>/`. For the other records it keeps the PDF links.
 - The award PDFs are often scans. The project does not read the amounts. That needs OCR later.
 - The site list is `data/s3waas_districts.json` (600 sites). It does not include the 18 sites behind Cloudflare Bot Management.
-- The first pool run uses 10 sites (`DISTRICTS_PILOT` in `family.py`). After a check of the results, set `DISTRICTS_ALL = True` and run the setup again.
+- The pilot used 10 sites (`DISTRICTS_PILOT` in `family.py`). Round 2 reads all 600 sites (`DISTRICTS_ALL = True`).
+- The queue keys are `r<round>:<host>`. The hub keeps the keys that are done. To read all sites again, increase `DISTRICTS_ROUND` and run the setup.
 
 Run one site from a team box, without the hub:
 
@@ -108,7 +116,7 @@ The `check` workflow on GitHub cannot reach the site, because its runner is not 
 ## Keep the queue up to date
 
 - Run the **setup** workflow (Actions, setup, Run workflow) after each change to `family.py`.
-- For the first pool run, `SEED_LIMIT` in `family.py` is 5. The setup then adds only the 5 newest items. Look at scrape.s1d.me, Runs. If the runs are good, set `SEED_LIMIT = None` and run the setup again.
+- `SEED_LIMIT` in `family.py` is `None`. The setup adds all the date ranges. A number limits the setup to the newest items (the first pool run used 5).
 - The setup adds each complete week of the current month (days 1 to 7, 8 to 14, 15 to 21, 22 to the end). It keeps the items that exist.
 - Run the setup again each week to add the new week.
 
