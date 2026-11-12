@@ -162,6 +162,27 @@ PROJECTS.append({
     "items": district_items(),
 })
 
+# G14, step 3: text of the award and payment PDFs that the districts project stored (ocr.py). The PDFs come from our own bucket
+# through hub.read_urls, so no proxy; the work is CPU (Tesseract on each runner's cores). Items: data/ocr_items.json, made by
+# tools/ocr_items.py from the districts records (10 PDFs per item). OCR_SEED_LIMIT: first pool run with a few items only.
+OCR = json.loads((HERE / "data" / "ocr_items.json").read_text())["items"]
+OCR_SEED_LIMIT = 3
+if OCR_SEED_LIMIT:
+    OCR = OCR[:OCR_SEED_LIMIT]
+
+PROJECTS.append({
+    "name": f"{FAMILY}-ocr",
+    "title": "Text of land acquisition award and payment PDFs from district websites (OCR, with amounts, villages, survey numbers)",
+    "task": "ocr",
+    "target": "backblazeb2.com",
+    "env": {"SOURCE_PROJECT": f"{FAMILY}-districts", "MAX_PAGES": "60"},
+    "probe": None,
+    "max_workers": 8,
+    "threads": 1, "delay_ms": 0,
+    "unit_label": "batch of PDFs", "record_label": "PDF",
+    "items": OCR,
+})
+
 # Health checks the hub runs every minute (through an Indian proxy: the host is .gov.in). Not attached to the project yet: the site's
 # TLS chain is incomplete, and a check that fails for that reason alone would hold all the work.
 PROBES = [{"name": f"{FAMILY}:egazette.gov.in", "url": "https://egazette.gov.in/", "expect": "Gazette of India", "proxy": "IN"},

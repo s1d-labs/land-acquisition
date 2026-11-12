@@ -1,6 +1,6 @@
 {
   "family": "land-acquisition",
-  "about": "Land acquisition: Gazette of India notices (egazette.gov.in), the national highway parcel register (bhoomirashi.gov.in), and awards on district websites (S3WaaS); state gazettes next.",
+  "about": "Land acquisition: Gazette of India notices (egazette.gov.in), the national highway parcel register (bhoomirashi.gov.in), and awards on district websites (S3WaaS); OCR of the award PDFs; state gazettes next.",
   "setup": [
     "pip install -r requirements.txt"
   ],
@@ -16,6 +16,10 @@
     "districts": [
       "python",
       "districts.py"
+    ],
+    "ocr": [
+      "python",
+      "ocr.py"
     ]
   }
 }
