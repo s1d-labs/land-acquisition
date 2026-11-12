@@ -166,7 +166,7 @@ PROJECTS.append({
 # through hub.read_urls, so no proxy; the work is CPU (Tesseract on each runner's cores). Items: data/ocr_items.json, made by
 # tools/ocr_items.py from the districts records (10 PDFs per item). OCR_SEED_LIMIT: first pool run with a few items only.
 OCR = json.loads((HERE / "data" / "ocr_items.json").read_text())["items"]
-OCR_SEED_LIMIT = 3
+OCR_SEED_LIMIT = None   # pilot 2026-11-13: 3 of 3 items, 30 of 30 PDFs, 0 failures, about 7 min per item
 if OCR_SEED_LIMIT:
     OCR = OCR[:OCR_SEED_LIMIT]
 

@@ -88,7 +88,7 @@ for _name, _pat in _UNITS:
     _UNIT_NAME[_name] = re.compile(r"^(?:" + _pat + r")$", re.I)
 
 AWARD_WORD = re.compile(
-    r"award|अधिनिर्णय|अवार्ड|निवाडा|निवाड़ा|section\s*23|धारा\s*23|sec\.?\s*23|u/s\.?\s*23|3\s*\(?g\)?(?![A-Za-z])",
+    r"award|अधिनिर्णय|अभिनिर्णय|अवॉर्ड|अवार्ड|निवाडा|निवाड़ा|section\s*23|धारा\s*23|sec\.?\s*23|u/s\.?\s*23|3\s*\(?g\)?(?![A-Za-z])",
     re.I,
 )
 AWARD_NO = re.compile(
