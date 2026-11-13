@@ -80,13 +80,33 @@ PRIZE = re.compile(r"electoral|booth|voter|ceremony|teacher|student|school|educa
 # Compensation that is not for land (victims, accidents, crops, disasters): dropped unless the title also names acquisition.
 OTHER_COMP = re.compile(r"victim|accident|motor|crop|flood|disaster|drought|ex-?\s*gratia|wild\s*life|animal|elephant|covid|"
                         r"cyclone|lightning|मृत|दुर्घटना|फसल|आपदा|सूखा|बाढ़|वन्य", re.I)
+# Titles that are not about land at all: RTI and CPIO lists, cultural, tender, recruitment, prize and sports items.
+# They are dropped unless the title also names land or acquisition (LAND_WORDS).
+UNRELATED = re.compile(r"\bCPIOs?\b|appellate|right\s+to\s+information|\bRTI\b|cultur|documentation|tender|recruit|vacanc|\bjobs?\b|"
+                       r"for\s+awarding|awarding\s+(?:a\s+)?(?:contract|promotion)|promotions?\b|padma|puraskar|पुरस्कार|prize|scholarship|"
+                       r"\bsports?\b|electoral|election|voter|मतदार|नियुक्ती|भरती|निविदा|quotation|e-?auction|lottery|teacher|student|"
+                       r"excellence|governance\s+award|seminar|workshop|road\s+safety|advocacy", re.I)
+LAND_WORDS = re.compile(r"acqui|aquisi|\bland|भूसंपादन|भू\s*-?\s*संपादन|भू\s*-?\s*अर्जन|भू\s*-?\s*अधिग्रहण|अधिग्रहण|अर्जन|मोबदला|"
+                        r"compensat|rehabilit|पुनर्वास|पुनर्वसन|RFCTLARR|\bLARR\b|\bNH\b|NH\s*-?\s*\d|highway|expressway|railway|rail\s+line|रेल|"
+                        r"रस्ता|मार्ग|भूमि|जमीन|जमिन|खसरा|\bR\s*&\s*R\b|\b3\s*-?\s*\(?\s*[ADGH]\s*\)?(?![a-z])|\b3\s*\(?\s*G\s*\)?\s*\(?\s*[1-5]\s*\)?(?![a-z])|"
+                        r"section\s*(?:11|19|21|23|25|26|30|31)|u/s|कलम|धारा|निवाडा|निवाडे|" + REGIONAL, re.I)
+# An award whose title is about a hearing (enquiry, 3G(3) claims hearing), a time extension or a payment is not an award.
+HEARING_RX = re.compile(r"hearing|enquir|inquir|जन\s*-?\s*सुनवाई|सुनवाई|सुनावणी|चौकशी|ഹിയറിംഗ്|"
+                        r"\b3\s*-?\s*\(?\s*G\s*\)?(?![a-z])\s*\(\s*3\s*\)|"
+                        r"\b3\s*\(?\s*G\s*\)?\s*3(?!\d)|claims?\s+(?:and|&)\s+objection|objection|"
+                        r"दावा\s*[-/,]?\s*(?:एवं|व|और)?\s*आपत्ति|हरकती|आक्षेप", re.I)
+TIME_EXT = re.compile(r"(?:time|period|month)s?\s*(?:limit|extension)|extension[^.]{0,30}(?:time|month|period|draft|award|declar)|"
+                      r"extend(?:ed)?[^.]{0,20}(?:time|period)|मुदतवाढ|मुदत\s*वाढ|कालावधी\s*वाढ|समय\s*विस्तार|अवधि\s*विस्तार", re.I)
+PAY_STRONG = re.compile(r"payment|payable|disburs|release\s+of\s+(?:the\s+)?(?:compensation|amount|payment)|receive\s+the\s+award|भुगतान|वितरण|cheque|compensation\s+camp", re.I)
+DECLARED = re.compile(r"declar|passed|general\s+award|consent\s+award|पारित|घोषित|final\s+award|award\s+order|\border\b|आदेश|publication\s+of|प्रसिद्ध|प्रकाशन|published", re.I)
 ACQ = re.compile(r"acqui|aquisi|भू\s*-?\s*अर्जन|अधिग्रहण|अर्जन|अधिनिर्णय|\b3\s*-?\s*\(?\s*[ADGH]\s*\)?(?![a-z])|" + REGIONAL, re.I)
 SEC = r"(?:section|sec\.?|u/s|धारा|कलम)\s*[-–.:]?\s*"       # "Section 11", "Section-11(1)", "धारा-31", "कलम 19"
 G3 = r"\b3\s*-?\s*\(?\s*G\s*\)?(?![a-z])"                   # NH Act 3G; 3G(1) is the award, 3G(2)-(5) the hearing and arbitration
 
 TAGS = [
-    ("award", re.compile(r"\baward|अवार्ड|अवॉर्ड|एवार्ड|अधिनिर्णय|निवाडा|" + G3 + r"(?!\s*\(\s*[2-5]\s*\))|" + SEC + r"(?:23|30)\b", re.I)),
+    ("award", re.compile(r"\bawards?\b|\bawarded\b|अवार्ड|अवॉर्ड|एवार्ड|अधिनिर्णय|निवाडा|निवाडे|" + G3 + r"(?!\s*\(\s*[2-5]\s*\))|" + SEC + r"(?:23|30)\b", re.I)),
     ("payment", re.compile(r"payment|payable|compensation\s+camp|camp\s+for\s+compensation|शिविर|amount\s+of\s+compensation|disburs|भुगतान|वितरण|"
+                           r"release\s+of\s+(?:the\s+)?(?:compensation|amount)|receive\s+the\s+award/compensation|"
                            r"मुआवजा\s*(?:राशि|सूची)|प्रतिकर\s*(?:राशि|सूची)|मोबदला\s*वाटप|cheque", re.I)),
     ("arbitration", re.compile(r"arbitrat|मध्यस्थ|आर्बिट्रेटर", re.I)),
     ("nh", re.compile(r"\bNH\b|NH\s*-?\s*\d|national\s+highway|राष्ट्रीय\s+राजमार्ग|bharat\s*mala|भारतमाला|expressway|greenfield|"
@@ -98,10 +118,9 @@ TAGS = [
     ("sec_19", re.compile(SEC + r"19\b|declaration|घोषणा|अंतिम\s+अधिसूचना|adhigh?osh?na", re.I)),
     ("sia", re.compile(r"social\s+impact|\bSIA\b|सामाजिक\s+समाघात|सामाजिक\s+प्रभाव", re.I)),
     # Public hearings (SIA hearings, the NH Act 3G(3) claims hearing) and calls for claims and objections.
-    ("hearing", re.compile(r"hearing|जन\s*-?\s*सुनवाई|सुनवाई|ഹിയറിംഗ്|" + G3 + r"\s*\(\s*3\s*\)|claims?\s+(?:and|&)\s+objection|"
-                           r"दावा\s*[-/,]?\s*(?:एवं|व|और)?\s*आपत्ति|हरकती", re.I)),
+    ("hearing", HEARING_RX),
     ("rnr", re.compile(r"rehabilit|resettle|\bR\s*&\s*R\b|पुनर्वास|पुनर्व्यवस्थापन|पुनर्वसन", re.I)),
-    ("notice", re.compile(r"notif|notice|अधिसूचना|अधिसुचना|सूचना|उद्घोषणा|इश्तहार|ईश्तहार|ishtihar|adhisoochna|gazette|राजपत्र|"
+    ("notice", re.compile(r"notif|notice|नोटीस|नोटिस|ईस्तहार|ईश्तहार|extension\s+of\s+time|time\s+extension|अधिसूचना|अधिसुचना|सूचना|उद्घोषणा|इश्तहार|ईश्तहार|ishtihar|adhisoochna|gazette|राजपत्र|"
                           r"నోటిఫికేషన్|ప్రకటన|നോട്ടീസ്|விஞ்ஞாபனம்|அறிவிப்பு", re.I)),
     ("order", re.compile(r"\border\b|आदेश|proceedings?\b|\bproc\.?\s*no", re.I)),
 ]
@@ -143,6 +162,8 @@ def iso(s):
 
 def is_land(title):
     """Pure: is a result title about land acquisition?"""
+    if UNRELATED.search(title) and not LAND_WORDS.search(title):
+        return False
     if OTHER_COMP.search(title) and not ACQ.search(title):
         return False
     if STRONG.search(title):
@@ -150,8 +171,21 @@ def is_land(title):
     return bool(AWARD.search(title) and (LAND.search(title) or VILLAGE_AWARDS.search(title)) and not PRIZE.search(title))
 
 
-def tags_of(text):
-    return [name for name, rx in TAGS if rx.search(text)]
+def tags_of(text, title=None):
+    """Pure: the tags of a record. `text` is the title and description; `title` (default: text) decides the award rules.
+
+    Unrelated titles get no tags. An award title that is about a hearing, a time extension or a payment is tagged hearing, notice
+    or payment instead of award (e.g. "Award Enquiry Notice", "Extension of time for award", "release of compensation of Award")."""
+    if UNRELATED.search(text) and not LAND_WORDS.search(text):
+        return []
+    title = text if title is None else title
+    tags = {name for name, rx in TAGS if rx.search(text)}
+    if "award" in tags and (HEARING_RX.search(title) or TIME_EXT.search(title)
+                            or (PAY_STRONG.search(title) and not DECLARED.search(title))):
+        tags.discard("award")
+        if TIME_EXT.search(title):
+            tags.add("notice")
+    return [name for name, _ in TAGS if name in tags]
 
 
 def results(page, host):
@@ -392,7 +426,7 @@ def do_site(hub, host, meta, save=None):
         text = " ".join(x for x in (data["title"], data["description"]) if x)
         data.update({"host": host, "site": meta.get("name"), "state": meta.get("state"), "url": unquote(url),
                      "type": "document" if "/document/" in url else "notice", "result_title": title,
-                     "tags": tags_of(text), "date": (data["dates"] or [None])[0], "search_hits": hits[url]})
+                     "tags": tags_of(text, data["title"]), "date": (data["dates"] or [None])[0], "search_hits": hits[url]})
         if not (is_land(text) or is_land(title)):
             hub.metric("items_not_land")
             continue
@@ -411,8 +445,9 @@ def do_site(hub, host, meta, save=None):
             continue
         seen_pdfs.update(data["pdf_urls"])
         text = " ".join(x for x in (data["title"], data["section"], data["page_title"]) if x)
+        row = " ".join(x for x in (data["title"], data["section"]) if x)
         data.update({"host": host, "site": meta.get("name"), "state": meta.get("state"), "url": unquote(lp),
-                     "type": "listing", "tags": tags_of(text), "date": (data["dates"] or [None])[0]})
+                     "type": "listing", "tags": tags_of(text, row), "date": (data["dates"] or [None])[0]})
         store_pdfs(hub, site, host, data, save)
         hub.record(f"{host}:{hashlib.sha1(unquote(data['pdf_urls'][0]).encode()).hexdigest()[:16]}", data)
         n_rec += 1
