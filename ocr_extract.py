@@ -68,7 +68,7 @@ SURVEY = re.compile(
 )
 
 _UNITS = [
-    ("hectare", r"hect(?:are|ares|ar)?|हेक्टेयर|हेक्टर|हे(?:\.|0)?|ha\.?"),
+    ("hectare", r"hect(?:are|ares|ar)?|हेक्टेयर|हेक्टयर|हेक्टर|ह[ेै](?:\.|0|०)?|ha\.?"),
     ("acre", r"acres?|ac\.?|एकड़|एकड|एकर|ఎకరా|ఎకరాలు|ஏக்கர்|ഏക്കർ|ਏਕੜ|একর"),
     ("sqm", r"sq\.?\s*m(?:tr|t|eters?|etres?)?|sqm|sq\.?\s*mt|square\s+met(?:er|re)s?|वर्ग\s*मीटर|चौरस\s*मीटर|वर्ग\s*मी\.?|m2|m²"),
     ("bigha", r"bigha|बीघा|बीघे|बिघा"),
@@ -83,6 +83,9 @@ AREA = re.compile(
     r"(?P<unit>" + "|".join(f"(?:{pat})" for _, pat in _UNITS) + r")(?![A-Za-z\u0900-\u097F])",
     re.I,
 )
+# hectare-are-square metre, as Himachal and Uttarakhand write it: "20-65-31 Hectare" = 20 ha + 65 are + 31 m2 = 20.6531 ha
+AREA_HAS = re.compile(r"(?<![\d.,/\-])(?P<h>\d{1,4})\s*-\s*(?P<a>\d{1,2})\s*-\s*(?P<s>\d{1,2})\s*[_.]?\s*"
+                      r"(?P<unit>hect(?:are|ares|ar)?|हेक्टेयर|हेक्टर|हे\.?)(?![A-Za-z])", re.I)
 _UNIT_NAME = {}
 for _name, _pat in _UNITS:
     _UNIT_NAME[_name] = re.compile(r"^(?:" + _pat + r")$", re.I)
@@ -250,10 +253,64 @@ def _survey_numbers(text):
 
 def _areas(text):
     out = []
+    for m in AREA_HAS.finditer(text):
+        h, a, sq = int(m.group("h")), int(m.group("a")), int(m.group("s"))
+        out.append({"value": round(h + a / 100 + sq / 10000, 4), "unit": "hectare", "raw": m.group(0).strip()})
     for m in AREA.finditer(text):
         unit = next(name for name, _ in _UNITS if _UNIT_NAME[name].match(m.group("unit").strip()))
         out.append({"value": float(m.group("num").replace(",", "")), "unit": unit, "raw": m.group(0).strip()})
     return out
+
+
+# A rate the award states: "45.00 लाख प्रति हेक्टेयर", "Rs. 12,50,000/- per acre", "₹ 2500 प्रति वर्ग मीटर".
+_RATE_UNIT_HA = [("hectare", 1.0, r"hect\w*|ha\b|हेक्टेयर|हेक्टयर|हेक्टर|हे\.?0?(?![\u0900-\u097F])"),
+                 ("acre", 1 / 0.404686, r"acre|एकड़|एकड|एकर"),
+                 ("sqm", 10_000.0, r"sq\.?\s*m\w*|sqm|वर्ग\s*मी\w*|चौरस\s*मी\w*"),
+                 ("are", 100.0, r"आर(?![\u0900-\u097F])"),
+                 ("cent", 1 / 0.00404686, r"cents?"),
+                 ("kanal", 1 / 0.0505858, r"kanal|कनाल"),
+                 ("marla", 1 / 0.00252929, r"marla|मरला")]
+# _rates() collapses whitespace first, so single optional spaces are enough (runs of \s* backtrack on layout text)
+RATE_FULL = re.compile(
+    r"(?<![\d.,])(?P<num>\d{1,3}(?:,\d{2,3})+(?:\.\d+)?|\d+(?:\.\d+)?) ?(?:/-)? ?"
+    r"(?:(?P<mult>lakhs?|lacs?|लाख|crores?|करोड़|करोड) ?)?(?:(?:रुपये|रूपये|rupees|/-) ?)?"
+    r"(?:per|प्रति|/) ?(?P<unit>" + "|".join(f"(?:{u})" for _, _, u in _RATE_UNIT_HA) + r")",
+    re.I,
+)
+
+
+def _rates(text):
+    """Stated rates, as rupees per hectare. Small values without lakh/crore (under Rs 1,000 per ha) are noise."""
+    out = []
+    text = re.sub(r"\s+", " ", text)
+    for m in RATE_FULL.finditer(text):
+        v = float(m.group("num").replace(",", ""))
+        mult = (m.group("mult") or "").lower()
+        v *= 1e7 if mult.startswith(("crore", "करोड")) else 1e5 if mult else 1
+        unit, k = next((n, k) for n, k, pat in _RATE_UNIT_HA if re.fullmatch(pat, m.group("unit"), re.I))
+        per_ha = v * k
+        if 1_000 <= per_ha <= 1e11:
+            out.append({"per_ha": round(per_ha), "unit": unit, "raw": m.group(0).strip()})
+    return out
+
+
+TOTAL_AREA_WORD = re.compile(r"(?<![a-z])total|कुल|कूल|एकूण|एकुण|योग|महायोग|aggregate", re.I)
+
+
+def _total_area(lines):
+    """The area on a total line ('कुल क्षेत्रफल 27.626 हे०', 'Total area 20-65-31 Hectare'), in hectares; else None."""
+    best = None
+    for line in lines:
+        if not TOTAL_AREA_WORD.search(line):
+            continue
+        for a in _areas(line):
+            ha = a["value"] * _HA.get(a["unit"], 0)
+            if ha and (best is None or ha > best):
+                best = ha
+    return round(best, 4) if best else None
+
+
+_HA = {"hectare": 1, "acre": 0.404686, "sqm": 0.0001, "cent": 0.00404686, "kanal": 0.0505858, "marla": 0.00252929}
 
 
 def _award_no_and_date(lines):
@@ -294,6 +351,8 @@ def extract(text: str) -> dict:
         "villages": _villages(lines),
         "survey_numbers": _survey_numbers(text),
         "area": _areas(text),
+        "total_area_ha": _total_area(lines),
+        "rates": _rates(text),
         "award_no": award_no,
         "award_date": award_date,
         "is_award": bool(AWARD_WORD.search(text)) and has_amount,

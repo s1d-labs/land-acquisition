@@ -153,3 +153,27 @@ def test_no_amounts_means_no_total_and_no_award():
 def test_empty_text():
     r = extract("")
     assert r["total"] is None and r["villages"] == [] and r["is_award"] is False
+
+
+def test_area_hectare_are_sqm():
+    # Himachal / Uttarakhand write area as hectare-are-square metre
+    from ocr_extract import _areas
+    a = _areas("an extent of land measuring 20-65-31 Hectare situated at village")
+    assert a[0]["unit"] == "hectare" and a[0]["value"] == 20.6531
+    assert _areas("0-12-34 हे. भूमि")[0]["value"] == 0.1234
+
+
+def test_stated_rates_and_total_area():
+    from ocr_extract import _rates, _total_area
+    assert _rates("रू० 45.00 लाख प्रति हेक्टयर प्रतिकर")[0]["per_ha"] == 4_500_000
+    assert _rates("Rs. 12,50,000/- per acre")[0]["unit"] == "acre"
+    assert _rates("₹ 2500 प्रति वर्ग मीटर")[0]["per_ha"] == 25_000_000
+    assert _total_area(["में कुल क्षेत्रफल 27.626 है0 निजी भूमि", "plot 3.1 hectare"]) == 27.626
+
+
+def test_rates_fast_on_layout_text():
+    import time
+    from ocr_extract import _rates
+    t = time.time()
+    _rates(("1234 " + " " * 200 + "56,78 " + "\t" * 50) * 2000)
+    assert time.time() - t < 2

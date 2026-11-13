@@ -5,6 +5,7 @@ Usage, from the repo root:
     python tools/load_ocr.py               # OCR records -> la.ocr_raw -> la.award_*
     python tools/load_ocr.py --bhoomi      # also bhoomirashi parcels -> la.bhoomi_raw -> la.bhoomi_*
     python tools/load_ocr.py --skip-copy   # rebuild la.award_* from the existing la.ocr_raw only
+    .venv/bin/python tools/load_ocr.py --reextract   # run today's ocr_extract.py on the stored page text (no new OCR)
 
 Needs the psql client. scrape_hub is read only; ws_ronik is written.
 Re-runnable: staging is truncated, derived tables are rebuilt in one transaction.
@@ -38,10 +39,20 @@ create or replace function la.try_int(t text) returns integer
 language sql immutable as $$
   select case when btrim($1) ~ '^-?[0-9]+$' then btrim($1)::integer end $$;
 
+-- plpgsql, so that an impossible OCR date (31/02/2019) gives null and does not stop the build
 create or replace function la.try_date(t text) returns date
-language sql immutable as $$
-  select case when btrim($1) ~ '^\d{4}-\d{2}-\d{2}$' then btrim($1)::date
-              when btrim($1) ~ '^\d{2}/\d{2}/\d{4}$' then to_date(btrim($1), 'DD/MM/YYYY') end $$;
+language plpgsql immutable as $$
+begin
+  if btrim(t) ~ '^\d{4}-\d{2}-\d{2}$' then return btrim(t)::date; end if;
+  if btrim(t) ~ '^\d{1,2}[/.-]\d{1,2}[/.-]\d{4}$' then
+    return make_date(split_part(regexp_replace(btrim(t), '[.-]', '/', 'g'), '/', 3)::int,
+                     split_part(regexp_replace(btrim(t), '[.-]', '/', 'g'), '/', 2)::int,
+                     split_part(regexp_replace(btrim(t), '[.-]', '/', 'g'), '/', 1)::int);
+  end if;
+  return null;
+exception when others then
+  return null;
+end $$;
 
 create or replace function la.jsonb_text_array(j jsonb) returns text[]
 language sql immutable as $$
@@ -116,6 +127,19 @@ select r.data->>'path', coalesce(la.try_int(p->>'n'), x.o::integer), p->>'method
        p->>'lang', la.try_numeric(p->>'conf'), la.try_int(p->>'words'), p->>'text'
 from la.ocr_raw r
 cross join lateral la.jsonb_elems(r.data->'pages') with ordinality as x(p, o);
+
+-- area on a total line, in hectares (ocr_extract total_area_ha), and the rates the award states (rupees per hectare)
+alter table la.award_doc add column if not exists total_area_ha numeric;
+update la.award_doc d set total_area_ha = la.try_numeric(r.data->'fields'->>'total_area_ha')
+from la.ocr_raw r where r.data->>'path' = d.path;
+
+create table if not exists la.award_stated_rate (path text, per_ha numeric, unit text, raw text);
+truncate la.award_stated_rate;
+insert into la.award_stated_rate (path, per_ha, unit, raw)
+select r.data->>'path', la.try_numeric(a->>'per_ha'), a->>'unit', a->>'raw'
+from la.ocr_raw r
+cross join lateral la.jsonb_elems(r.data->'fields'->'rates') as x(a);
+create index if not exists award_stated_rate_path_idx on la.award_stated_rate (path);
 """
 
 BHOOMI_EXPORT = (
@@ -155,6 +179,32 @@ def stream_copy(export_cmd, target, columns):
         sys.exit(f"export from {SRC_DB} failed (exit {rc})")
 
 
+def reextract():
+    """Replace data->'fields' in la.ocr_raw with ocr_extract.extract() of the record's page text (the parser has improved
+    since the pool run; the text has not changed)."""
+    import csv, io, json
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+    from ocr_extract import extract
+    q = ("copy (select record_id, (select string_agg(p->>'text', E'\\f\\n' order by (p->>'n')::int) "
+         "from jsonb_array_elements(data->'pages') p) from la.ocr_raw) to stdout with csv")
+    src = subprocess.run([*PSQL, "-d", DST_DB, "-c", q], check=True, text=True, capture_output=True).stdout
+    csv.field_size_limit(1 << 30)
+    buf, n = io.StringIO(), 0
+    w = csv.writer(buf)
+    for rid, text in csv.reader(io.StringIO(src)):
+        try:
+            f = extract(text or "")
+        except Exception as e:
+            f = {"error": f"{type(e).__name__}: {e}"[:200]}
+        w.writerow([rid, json.dumps(f, ensure_ascii=False)])
+        n += 1
+    subprocess.run([*PSQL, "-d", DST_DB, "-c", "create table if not exists la.ocr_fields (record_id text primary key, fields jsonb)",
+                    "-c", "truncate la.ocr_fields", "-c", "\\copy la.ocr_fields from stdin with csv",
+                    ], input=buf.getvalue(), text=True, check=True)
+    run_sql("update la.ocr_raw r set data = jsonb_set(r.data, '{fields}', f.fields) from la.ocr_fields f where f.record_id = r.record_id;")
+    print(f"re-extracted fields of {n:,} records")
+
+
 def print_counts(tables):
     q = " union all ".join(f"select '{t}', count(*) from {t}" for t in tables)
     out = subprocess.run([*PSQL, "-d", DST_DB, "-At", "-F", "\t", "-c", q],
@@ -169,6 +219,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--bhoomi", action="store_true", help="also load the bhoomirashi parcels")
     ap.add_argument("--skip-copy", action="store_true", help="rebuild OCR tables from la.ocr_raw only")
+    ap.add_argument("--reextract", action="store_true", help="run ocr_extract.py again on the stored page text")
     args = ap.parse_args()
 
     run_sql(SETUP_SQL)
@@ -177,8 +228,10 @@ def main():
     else:
         print(f"copying {OCR_PROJECT} from {SRC_DB} ...")
         stream_copy(OCR_EXPORT, "la.ocr_raw", "record_id, data")
+    if args.reextract:
+        reextract()
     run_sql(BUILD_SQL, single=True)
-    print_counts(["la.ocr_raw", "la.award_doc", "la.award_amount", "la.award_area", "la.award_page"])
+    print_counts(["la.ocr_raw", "la.award_doc", "la.award_amount", "la.award_area", "la.award_page", "la.award_stated_rate"])
 
     if args.bhoomi:
         run_sql("create table if not exists la.bhoomi_raw (record_id text primary key, data jsonb not null);")
